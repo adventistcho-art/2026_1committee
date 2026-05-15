@@ -179,7 +179,148 @@
         </div>
     </div>
 
-    <script src="committee-data.js"></script>
-    <script src="app.js"></script>
+    <script>
+const committeeData = [
+    { id: 1, category: "정책기구", name: "ESG위원회", dept: "기획처", function: "● ESG 경영을 위한 기본 정책 및 전략 등의 수립\n● 지속가능한 경영환경 조성 및 리스크 관리\n● 사회적 책임 및 공헌활동의 성과 모니터링\n● ESG관련 주요 업무에 대한 검토, 조정, 협의 및 심의\n● 총장이 부의하는 ESG경영에 관한 주요사항", exOfficio: "총장(위원장), 기획처장(서기), 부총장, 각 처장, 총장특보, 각 단과대학장, 각 대학원장, 대학원장, 대학혁신지원사업단장, S/W융합교육원장, 교양교육원장, 대학일자리본부장, 총학생회장", appointed: "-" },
+    { id: 2, category: "정책기구", name: "교무위원회", dept: "교무처", function: "● 대학(원), 학과, 부속기관, 부설연구소의 설치와 폐지에 관한 사항\n● 학사 관련 규정의 제정과 개폐에 관한 사항\n● 입학, 수료, 졸업에 관한 사항\n● 교수의 교무에 관한 사항", exOfficio: "총장(위원장), 교무처장(서기), 부총장, 각 처장, 총장특보, 각 단과대학장, 각 대학원장, 교양교육원장, 교육혁신원장, 국제교육원장, 생활교육원장, 학술정보원장, AI융합교육원장", appointed: "-" },
+    { id: 3, category: "정책기구", name: "교수회", dept: "교무처", function: "● 중대한 학칙 신설/변경\n● 중대한 정책 신설/변경\n● 기타 학교 운영에 관한 중대한 사항들", exOfficio: "총장(의장), 교무처장(서기), 교수 전원(조교수 이상)", appointed: "-" },
+    { id: 4, category: "정책기구", name: "교육이념구현위원회", dept: "교목처", function: "● 이념구현을 위한 규정에 관한 사항\n● 학생 신앙지도에 관한 정책 사항\n● 교직원 신앙프로그램에 관한 사항", exOfficio: "총장(위원장), 교목처장(서기), 부총장, 각처장, 각 단과대학장, 신학대학원장, 학술정보원장, 글로컬사회혁신원장, 교육혁신원장, 생활교육원장, 교양교육원장", appointed: "-" },
+    { id: 5, category: "정책기구", name: "대학건축위원회", dept: "건축안전관리팀", function: "● 교사 신축에 관한 사항\n● 교사 증(개)축에 관한 사항\n● 부동산 개발에 관한 사항", exOfficio: "총장(의장), 사무처장(서기), 부총장, 각 처장, 건축학과장, 건축학과교수(1), 장애학생지원센터장, 사무부처장, 건축안전관리팀장, 예산팀장, 재무팀장", appointed: "사광균(건축학과장), 권혜주(교수)" },
+    { id: 6, category: "정책기구", name: "대학평의원회", dept: "기획처", function: "● 대학의 발전계획에 관한 사항\n● 학칙의 제정 또는 개정에 관한 사항\n● 대학 헌장의 제정 또는 개정에 관한 사항\n● 대학교육과정의 운영에 관한 사항\n● 대학의 예산 및 결산에 관한 사항\n● 개방이사추천위원회 위원 추천에 관한 사항\n● 총장이 부의하는 교육에 관한 주요 사항", exOfficio: "교수대표(5), 직원대표(3), 조교대표(1), 동문대표(1), 학생대표(2), 외부인사(1)", appointed: "이건호(교수), 이규일(교수), 이용우(교수), 임태종(교수), 정구철(교수), 정지현(학생), 신재현(학생), 김기석(직원), 오덕신(동문), 류재권(직원), 박재영(외부), 김유현(조교), 신동석(직원)" },
+    { id: 7, category: "정책기구", name: "대학혁신위원회", dept: "기획처", function: "● 재정지원사업 운영의 총괄적 점검\n● 자율혁신계획 상 특성화 방향에 기반한 투자 계획수립\n● 대학 내 재정지원사업의 성과에 대한 총괄적 평가·환류 및 투명성·공공성 강화를 위한 모니터링\n● 발전계획 및 특성화 계획에 관한 사항\n● 발전계획에 따른 각 부처별 세부 실행전략에 관한 사항", exOfficio: "총장(위원장), 기획처장(서기), 부총장, 각 처장, 총장특보, 각 단과대학장, 각 대학원장, 대학원장, 대학혁신지원사업단장, AI융합교육원장, 교양교육원장, 대학일자리본부장, 총학생회장", appointed: "-" },
+    { id: 8, category: "정책기구", name: "비상대책위원회", dept: "건축안전관리팀", function: "● 대학 차원의 주요 문제발생 시 긴급조치를 필요로 하는 사항에 대한 협의 및 조치", exOfficio: "총장(위원장), 부총장(서기), 국제처장, 재무처장, 총장특보, 해당처장", appointed: "-" },
+    { id: 9, category: "정책기구", name: "위기관리위원회", dept: "건축안전관리팀", function: "● 대학 차원의 주요 문제발생 시 긴급조치를 필요로 하는 사항에 대한 협의 및 조치", exOfficio: "총장(위원장), 부총장(서기), 각 처장, 총장특보", appointed: "-" },
+    { id: 10, category: "정책기구", name: "전인교육위원회", dept: "교목처", function: "● 전인교육을 위한 정책 수립 및 운영 방안 입안", exOfficio: "교목처장(위원장), 글로컬사회혁신원장(서기), 부총장, 각 처장, 총장특보, 교수(2)", appointed: "김정미(교수), 김성완(교수)" },
+    { id: 11, category: "정책기구", name: "직원회", dept: "총무인사팀", function: "● 직원에 관한 주요 행정 사안들\n● 대학 운영에 있어서의 직원들의 역할에 관한 주요 사항들", exOfficio: "총장(의장), 사무처장(서기), 직원 전원(정규직)", appointed: "-" },
+    { id: 12, category: "정책기구", name: "행정위원회", dept: "기획처", function: "● 학교시설 및 장비구입에 관한 사항\n● 예산편성 및 결산에 관한 사항\n● 수당, 급여규정에 관한 사항\n● 행사, 규정승인 등 학교행정에 관한 제반사항\n● 기타 총장이 제의한 사항\n● 행정 조직의 변경이나 신설에 관한 사항\n● 각 부서, 학과, 부속기관들의 운영에 관한 사항\n● 각종 위원회 신설이나 폐지에 관한 사항\n● 교직원 장학에 관한 사항\n● 500만원 이상의 재정 안건에 관한 사항\n● 의례적인 결의사항(출장, 병가, 휴가, 장소대여, 처·실장 전결사항 등)", exOfficio: "총장(의장), 기획처장(서기), 부총장, 각 처장, 총장특보, 단과대학장(1), 미래융합대학장, 신학대학장, 창의융합대학장, 간호대학장, 신학대학장, 약학대학장은 1년씩 교대로 참여, 대학원장, 대학혁신지원사업단장, 교양교육원장, 교육혁신원장, 글로컬사회혁신원장, 생활교육원장, 평생교육원장, 학술정보원장, 교수(1), 기획팀장, 예산팀장, 내부감사, 직원(1)", appointed: "한숙정(교수), 박일호(단과대학장), 윤진한(직원)" }
+];
+    </script>
+    <script>
+let currentCategory = "전체";
+
+function init() {
+    renderSidebar();
+    runFilters();
+}
+
+function renderSidebar() {
+    const sidebar = document.getElementById('categoryList');
+    const categories = [...new Set(committeeData.map(c => c.category))];
+    document.getElementById('count-all').textContent = committeeData.length;
+
+    categories.forEach(cat => {
+        const count = committeeData.filter(c => c.category === cat).length;
+        const btn = document.createElement('button');
+        btn.id = `cat-${cat.replace(/\s/g, '')}`;
+        btn.className = "w-full flex items-center justify-between px-4 py-2.5 rounded-xl text-sm font-medium transition-all text-slate-500 hover:bg-slate-100 hover:text-slate-800";
+        btn.onclick = () => filterByCategory(cat);
+        btn.innerHTML = `<span>${cat}</span><span class="text-[9px] bg-slate-100 text-slate-400 font-bold px-1.5 py-0.5 rounded-md">${count}</span>`;
+        sidebar.appendChild(btn);
+    });
+}
+
+function filterByCategory(cat) {
+    currentCategory = cat;
+    document.querySelectorAll('#categoryList button').forEach(b => b.classList.remove('sidebar-item-active'));
+    const activeBtn = cat === "전체" ? document.getElementById('cat-all') : document.getElementById(`cat-${cat.replace(/\s/g, '')}`);
+    activeBtn.classList.add('sidebar-item-active');
+    runFilters();
+}
+
+function runFilters() {
+    const nameSearch = document.getElementById('nameInput').value.toLowerCase();
+    const deptSearch = document.getElementById('deptInput').value.toLowerCase();
+    
+    const filtered = committeeData.filter(item => {
+        const catMatch = currentCategory === "전체" || item.category === currentCategory;
+        const nameMatch = item.name.toLowerCase().includes(nameSearch);
+        const deptMatch = item.dept.toLowerCase().includes(deptSearch);
+        return catMatch && nameMatch && deptMatch;
+    });
+    
+    renderTable(filtered);
+}
+
+function renderTable(data) {
+    const tbody = document.getElementById('dataTableBody');
+    tbody.innerHTML = '';
+    
+    if (data.length === 0) {
+        document.getElementById('emptyState').classList.remove('hidden');
+        return;
+    }
+    document.getElementById('emptyState').classList.add('hidden');
+
+    data.forEach(item => {
+        const tr = document.createElement('tr');
+        tr.className = "table-row group transition-all";
+        tr.innerHTML = `
+            <td class="px-6 py-5 text-center text-[10px] font-bold text-slate-300">#${item.id}</td>
+            <td class="px-6 py-5">
+                <div class="font-bold text-slate-800 text-sm">${item.name}</div>
+                <div class="text-[10px] text-slate-400 mt-0.5 font-medium">${item.category}</div>
+            </td>
+            <td class="px-6 py-5 text-center">
+                <button onclick="openSpecificModal(${item.id}, 'function')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 text-emerald-700 text-[11px] font-bold rounded-xl border border-emerald-100 hover:bg-emerald-600 hover:text-white">
+                    <i class="fas fa-tasks"></i> 기능 보기
+                </button>
+            </td>
+            <td class="px-6 py-5 text-center">
+                <button onclick="openSpecificModal(${item.id}, 'members')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-700 text-[11px] font-bold rounded-xl border border-blue-100 hover:bg-blue-600 hover:text-white">
+                    <i class="fas fa-users"></i> 명단 보기
+                </button>
+            </td>
+            <td class="px-6 py-5 text-right">
+                <span class="inline-block px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded-lg border border-slate-200">
+                    ${item.dept}
+                </span>
+            </td>
+        `;
+        tbody.appendChild(tr);
+    });
+}
+
+function openSpecificModal(id, mode) {
+    const item = committeeData.find(d => d.id === id);
+    if (!item) return;
+
+    const modal = document.getElementById('detailModal');
+    const header = document.getElementById('modalHeader');
+    const badge = document.getElementById('modalBadge');
+    const title = document.getElementById('modalTitle');
+    const sub = document.getElementById('modalSub');
+    
+    const funcArea = document.getElementById('functionContent');
+    const memberArea = document.getElementById('membersContent');
+
+    title.textContent = item.name;
+    sub.textContent = `${item.category} | ${item.dept}`;
+
+    if (mode === 'function') {
+        header.style.backgroundColor = '#004a26';
+        badge.textContent = "주요 기능 조회";
+        funcArea.classList.remove('hidden');
+        memberArea.classList.add('hidden');
+        document.getElementById('funcText').textContent = item.function;
+    } else {
+        header.style.backgroundColor = '#1e40af';
+        badge.textContent = "위원 명단 조회";
+        funcArea.classList.add('hidden');
+        memberArea.classList.remove('hidden');
+        document.getElementById('exText').textContent = item.exOfficio;
+        document.getElementById('appText').textContent = item.appointed;
+    }
+
+    modal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+    document.getElementById('detailModal').classList.add('hidden');
+    document.body.style.overflow = '';
+}
+
+window.onload = init;
+    </script>
 </body>
 </html>
