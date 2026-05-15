@@ -1,0 +1,2055 @@
+<!DOCTYPE html>
+<html lang="ko"><head><script>(function(firebaseConfig, initialAuthToken, appId) {
+        window.__firebase_config = firebaseConfig;
+        window.__initial_auth_token = initialAuthToken;
+        window.__app_id = appId;
+            })("\n{\n  \"apiKey\": \"AIzaSyCqyCcs2R2e7AegGjvFAwG98wlamtbHvZY\",\n  \"authDomain\": \"bard-frontend.firebaseapp.com\",\n  \"projectId\": \"bard-frontend\",\n  \"storageBucket\": \"bard-frontend.firebasestorage.app\",\n  \"messagingSenderId\": \"175205271074\",\n  \"appId\": \"1:175205271074:web:2b7bd4d34d33bf38e6ec7b\"\n}\n","eyJhbGciOiJSUzI1NiIsImtpZCI6Ijg4NWQ3NDljYzY2NDljMDMxOWY1YmJlYWYwMWU4ZmVjZDIyZjk1YzQiLCJ0eXAiOiJKV1QifQ.eyJzdWIiOiJmaXJlYmFzZS1hZG1pbnNkay1mYnN2Y0BiYXJkLWZyb250ZW5kLmlhbS5nc2VydmljZWFjY291bnQuY29tIiwiYXVkIjoiaHR0cHM6Ly9pZGVudGl0eXRvb2xraXQuZ29vZ2xlYXBpcy5jb20vZ29vZ2xlLmlkZW50aXR5LmlkZW50aXR5dG9vbGtpdC52MS5JZGVudGl0eVRvb2xraXQiLCJ1aWQiOiIwMDY3MzcwODI2NzE3MjI2ODUzMyIsImlzcyI6ImZpcmViYXNlLWFkbWluc2RrLWZic3ZjQGJhcmQtZnJvbnRlbmQuaWFtLmdzZXJ2aWNlYWNjb3VudC5jb20iLCJjbGFpbXMiOnsiYXBwSWQiOiJjXzdlYjg1ZjU3ODFmNDk2OGVfaW5kZXguaHRtbC04MiJ9LCJleHAiOjE3Nzg4MjMwNDYsImlhdCI6MTc3ODgxOTQ0NiwiYWxnIjoiUlMyNTYifQ.jXogCq0OaaxINqT1609GCuyU97OAVjR2A1Xuj_MbU9g8SlHyz0MLFQXLjvioVCbujPQNt_4rPbn47m-ezznEBCXRse3dCjwSeuOERlJYmqZWo8GFGx_3KOGHKdvL0hm6yRghj2V9MUood4tsIEfJ1uCaZdGLYNOtL9Dj5GTvcuPl7_nSTFug-0vIfg1wYiVPvTHESxotFPGrbYxNEJybRovpqRm2kSe5ocfU2bnV5858LpIAjO5ZQ9eVZzCj91NHfjvU9e7wAyQ2q8FxNfv5WTB6U3fVoKquBupeK4WG_HcaHygqAlEP1HGPZRaXdeHizmoV9DoC5YQwhp3VFD0KZQ","c_7eb85f5781f4968e_index.html-82")</script><script>(function(){'use strict';var h=typeof Object.defineProperties=="function"?Object.defineProperty:function(a,b,d){if(a==Array.prototype||a==Object.prototype)return a;a[b]=d.value;return a};function l(a){a=["object"==typeof globalThis&&globalThis,a,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var b=0;b<a.length;++b){var d=a[b];if(d&&d.Math==Math)return d}throw Error("Cannot find global object");}var n=l(this);
+function p(a,b){if(b)a:{var d=n;a=a.split(".");for(var c=0;c<a.length-1;c++){var e=a[c];if(!(e in d))break a;d=d[e]}a=a[a.length-1];c=d[a];b=b(c);b!=c&&b!=null&&h(d,a,{configurable:!0,writable:!0,value:b})}}function r(a){function b(c){return a.next(c)}function d(c){return a.throw(c)}return new Promise(function(c,e){function f(g){g.done?c(g.value):Promise.resolve(g.value).then(b,d).then(f,e)}f(a.next())})}function t(a){return r(a())}
+p("Object.values",function(a){return a?a:function(b){var d=[],c;for(c in b)Object.prototype.hasOwnProperty.call(b,c)&&d.push(b[c]);return d}});p("Array.prototype.includes",function(a){return a?a:function(b,d){var c=this;c instanceof String&&(c=String(c));var e=c.length;d=d||0;for(d<0&&(d=Math.max(d+e,0));d<e;d++){var f=c[d];if(f===b||Object.is(f,b))return!0}return!1}});/*
+
+ MIT License
+
+ Copyright (c) 2017-2023 W.Y.
+
+ Permission is hereby granted, free of charge, to any person obtaining a copy
+ of this software and associated documentation files (the "Software"), to deal
+ in the Software without restriction, including without limitation the rights
+ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+
+ The above copyright notice and this permission notice shall be included in
+ all copies or substantial portions of the Software.
+
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ SOFTWARE.
+
+*/
+function u(a,b){var d=a.style;b.backgroundColor&&(d.backgroundColor=b.backgroundColor);b.width&&(d.width=`${b.width}px`);b.height&&(d.height=`${b.height}px`);var c=b.style;c!=null&&Object.keys(c).forEach(e=>{d[e]=c[e]})};var v=(()=>{var a=0;return()=>{a+=1;return`u${`0000${(Math.random()*1679616<<0).toString(36)}`.slice(-4)}${a}`}})();function w(a){var b=[];for(let d=0,c=a.length;d<c;d++)b.push(a[d]);return b}let x=null;function y(a={}){return x?x:a.l?x=a.l:x=w(window.getComputedStyle(document.documentElement))}function z(a,b){return(a=(a.ownerDocument.defaultView||window).getComputedStyle(a).getPropertyValue(b))?parseFloat(a.replace("px","")):0}
+function A(a,b={}){var d;if(!(d=b.width)){d=z(a,"border-left-width");var c=z(a,"border-right-width");d=a.clientWidth+d+c}(b=b.height)||(b=z(a,"border-top-width"),c=z(a,"border-bottom-width"),b=a.clientHeight+b+c);return{width:d,height:b}}function B(a){return new Promise((b,d)=>{var c=new Image;c.onload=()=>{c.decode().then(()=>{requestAnimationFrame(()=>b(c))})};c.onerror=d;c.crossOrigin="anonymous";c.decoding="async";c.src=a})}
+function C(a){return t(function*(){return Promise.resolve().then(()=>(new XMLSerializer).serializeToString(a)).then(encodeURIComponent).then(b=>`data:image/svg+xml;charset=utf-8,${b}`)})}
+function D(a,b,d){return t(function*(){var c=document.createElementNS("http://www.w3.org/2000/svg","svg"),e=document.createElementNS("http://www.w3.org/2000/svg","foreignObject");c.setAttribute("width",`${b}`);c.setAttribute("height",`${d}`);c.setAttribute("viewBox",`0 0 ${b} ${d}`);e.setAttribute("width","100%");e.setAttribute("height","100%");e.setAttribute("x","0");e.setAttribute("y","0");e.setAttribute("externalResourcesRequired","true");c.appendChild(e);e.appendChild(a);return C(c)})}
+var E=(a,b)=>{if(a instanceof b)return!0;a=Object.getPrototypeOf(a);return a===null?!1:a.constructor.name===b.name||E(a,b)};function F(a,b){return y(b).map(d=>{var c=a.getPropertyValue(d),e=a.getPropertyPriority(d);return`${d}: ${c}${e?" !important":""};`}).join(" ")}
+function G(a,b,d,c){a=window.getComputedStyle(a,d);var e=a.getPropertyValue("content");if(e!==""&&e!=="none"){var f=v();try{b.className=`${b.className} ${f}`}catch(k){return}e=document.createElement("style");var g=e.appendChild;d=`.${f}:${d}`;a.cssText?(c=a.getPropertyValue("content"),c=`${a.cssText} content: '${c.replace(/'|"/g,"")}';`):c=F(a,c);g.call(e,document.createTextNode(`${d}{${c}}`));b.appendChild(e)}};function H(a){return a.search(/^(data:)/)!==-1}function I(a,b,d){return t(function*(){var c=yield fetch(a,b);if(c.status===404)throw Error(`Resource "${c.url}" not found`);var e=yield c.blob();return new Promise((f,g)=>{var k=new FileReader;k.onerror=g;k.onloadend=()=>{try{f(d({o:c,result:k.result}))}catch(m){g(m)}};k.readAsDataURL(e)})})}const J={};function K(a,b,d){var c=a.replace(/\?.*/,"");d&&(c=a);/ttf|otf|eot|woff2?/i.test(c)&&(c=c.replace(/.*\//,""));return b?`[${b}]${c}`:c}
+function L(a,b,d){return t(function*(){var c=K(a,b,d.C);if(J[c]!=null)return J[c];d.u&&(a+=(/\?/.test(a)?"&":"?")+(new Date).getTime());try{let f=yield I(a,d.i,({o:g,result:k})=>{b||(b=g.headers.get("Content-Type")||"");return k.split(/,/)[1]});var e=`data:${b};base64,${f}`}catch(f){e=d.B||""}return J[c]=e})};const M={P:"application/font-woff",R:"application/font-woff",N:"application/font-truetype",v:"application/vnd.ms-fontobject",H:"image/png",F:"image/jpeg",D:"image/jpeg",A:"image/gif",M:"image/tiff",L:"image/svg+xml",O:"image/webp"};function N(a){return(a=/\.([^./]*?)$/g.exec(a))?a[1]:""};function O(a){return t(function*(){var b=a.toDataURL();return b==="data:,"?a.cloneNode(!1):B(b)})}function aa(a,b){return t(function*(){if(a.currentSrc){var d=document.createElement("canvas");let c=d.getContext("2d");d.width=a.clientWidth;d.height=a.clientHeight;c==null||c.drawImage(a,0,0,d.width,d.height);d=d.toDataURL();return B(d)}d=a.poster;d=yield L(d,M[N(d).toLowerCase()]||"",b);return B(d)})}
+function ba(a,b){return t(function*(){try{let d;if(a==null?0:(d=a.contentDocument)==null?0:d.body)return yield P(a.contentDocument.body,b,!0)}catch(d){}return a.cloneNode(!1)})}function ca(a,b){return t(function*(){return E(a,HTMLCanvasElement)?O(a):E(a,HTMLVideoElement)?aa(a,b):E(a,HTMLIFrameElement)?ba(a,b):a.cloneNode(a.tagName!=null&&a.tagName.toUpperCase()==="SVG")})}
+function da(a,b,d){return t(function*(){if(b.tagName!=null&&b.tagName.toUpperCase()==="SVG")return b;var c=[];if(a.tagName!=null&&a.tagName.toUpperCase()==="SLOT"&&a.assignedNodes)c=w(a.assignedNodes());else{let e;if(E(a,HTMLIFrameElement)&&((e=a.contentDocument)==null?0:e.body))c=w(a.contentDocument.body.childNodes);else{let f;c=w(((f=a.shadowRoot)!=null?f:a).childNodes)}}if(c.length===0||E(a,HTMLVideoElement))return b;yield c.reduce((e,f)=>e.then(()=>P(f,d)).then(g=>{g&&b.appendChild(g)}),Promise.resolve());
+return b})}function ea(a,b,d){var c=b.style;if(c){var e=window.getComputedStyle(a);e.cssText?(c.cssText=e.cssText,c.transformOrigin=e.transformOrigin):y(d).forEach(f=>{var g=e.getPropertyValue(f);f==="font-size"&&g.endsWith("px")&&(g=`${Math.floor(parseFloat(g.substring(0,g.length-2)))-.1}px`);E(a,HTMLIFrameElement)&&f==="display"&&g==="inline"&&(g="block");f==="d"&&b.getAttribute("d")&&(g=`path(${b.getAttribute("d")})`);c.setProperty(f,g,e.getPropertyPriority(f))})}}
+function fa(a,b){E(a,HTMLSelectElement)&&(b=Array.from(b.children).find(d=>a.value===d.getAttribute("value")))&&b.setAttribute("selected","")}
+function ha(a,b){return t(function*(){var d=a.querySelectorAll?a.querySelectorAll("use"):[];if(d.length===0)return a;var c={};for(var e=0;e<d.length;e++){var f=d[e].getAttribute("xlink:href");if(f){let g=document.querySelector(f);a.querySelector(f)||!g||c[f]||(c[f]=yield P(g,b,!0))}}d=Object.values(c);if(d.length){c=document.createElementNS("http://www.w3.org/1999/xhtml","svg");c.setAttribute("xmlns","http://www.w3.org/1999/xhtml");c.style.position="absolute";c.style.width="0";c.style.height="0";
+c.style.overflow="hidden";c.style.display="none";e=document.createElementNS("http://www.w3.org/1999/xhtml","defs");c.appendChild(e);for(f=0;f<d.length;f++)e.appendChild(d[f]);a.appendChild(c)}return a})}
+function P(a,b,d){return t(function*(){return d||!b.filter||b.filter(a)?Promise.resolve(a).then(c=>ca(c,b)).then(c=>da(a,c,b)).then(c=>{E(c,Element)&&(ea(a,c,b),G(a,c,":before",b),G(a,c,":after",b),E(a,HTMLTextAreaElement)&&(c.textContent=a.value),E(a,HTMLInputElement)&&c.setAttribute("value",a.value),fa(a,c));return c}).then(c=>ha(c,b)):null})};const Q=/url\((['"]?)([^'"]+?)\1\)/g,ia=/url\([^)]+\)\s*format\((["']?)([^"']+)\1\)/g,ja=/src:\s*(?:url\([^)]+\)\s*format\([^)]+\)[,;]\s*)+/g;function ka(a){var b=[];a.replace(Q,(d,c,e)=>{b.push(e);return d});return b.filter(d=>!H(d))}
+function la(a,b,d,c){return t(function*(){try{let e=d?(new URL(b,d||void 0)).toString():b,f;f=yield L(e,M[N(b).toLowerCase()]||"",c);return a.replace(new RegExp(`(url\\(['"]?)(${b.replace(/([.*+?^${}()|\[\]\/\\])/g,"\\$1")})(['"]?\\))`,"g"),`$1${f}$3`)}catch(e){}return a})}function ma(a,{I:b}){return b?a.replace(ja,d=>{for(;;){let [c,,e]=ia.exec(d)||[];if(!e)return"";if(e===b)return`src: ${c};`}}):a}
+function R(a,b,d){return t(function*(){if(a.search(Q)===-1)return a;var c=ma(a,d);return ka(c).reduce((e,f)=>e.then(g=>la(g,f,b,d)),Promise.resolve(c))})};function S(a,b,d){return t(function*(){var c,e=(c=b.style)==null?void 0:c.getPropertyValue(a);return e?(c=yield R(e,null,d),b.style.setProperty(a,c,b.style.getPropertyPriority(a)),!0):!1})}function na(a,b){return t(function*(){(yield S("background",a,b))||(yield S("background-image",a,b));(yield S("mask",a,b))||(yield S("-webkit-mask",a,b))||(yield S("mask-image",a,b))||(yield S("-webkit-mask-image",a,b))})}
+function oa(a,b){return t(function*(){var d=E(a,HTMLImageElement);if(d&&!H(a.src)||E(a,SVGImageElement)&&!H(a.href.baseVal)){var c=d?a.src:a.href.baseVal,e=yield L(c,M[N(c).toLowerCase()]||"",b);yield new Promise((f,g)=>{a.onload=f;a.onerror=b.m?(...k)=>{try{f(b.m(...k))}catch(m){g(m)}}:g;a.decode&&(a.decode=f);a.loading==="lazy"&&(a.loading="eager");d?(a.srcset="",a.src=e):a.href.baseVal=e})}})}
+function pa(a,b){return t(function*(){var d=w(a.childNodes).map(c=>T(c,b));yield Promise.all(d).then(()=>a)})}function T(a,b){return t(function*(){E(a,Element)&&(yield na(a,b),yield oa(a,b),yield pa(a,b))})};const U={};function V(a){return t(function*(){var b=U[a];if(b!=null)return b;b=yield(yield fetch(a)).text();b={url:a,cssText:b};return U[a]=b})}function W(a,b){return t(function*(){var d=a.cssText,c=/url\(["']?([^"')]+)["']?\)/g,e=(d.match(/url\([^)]+\)/g)||[]).map(f=>t(function*(){var g=f.replace(c,"$1");g.startsWith("https://")||(g=(new URL(g,a.url)).href);return I(g,b.i,({result:k})=>{d=d.replace(f,`url(${k})`);return[f,k]})}));return Promise.all(e).then(()=>d)})}
+function X(a){if(a==null)return[];var b=[];a=a.replace(/(\/\*[\s\S]*?\*\/)/gi,"");for(var d=RegExp("((@.*?keyframes [\\s\\S]*?){([\\s\\S]*?}\\s*?)})","gi");;){var c=d.exec(a);if(c===null)break;b.push(c[0])}a=a.replace(d,"");d=/@import[\s\S]*?url\([^)]*\)[\s\S]*?;/gi;for(c=RegExp("((\\s*?(?:\\/\\*[\\s\\S]*?\\*\\/)?\\s*?@media[\\s\\S]*?){([\\s\\S]*?)}\\s*?})|(([\\s\\S]*?){([\\s\\S]*?)})","gi");;){let e=d.exec(a);if(e===null)if(e=c.exec(a),e===null)break;else d.lastIndex=c.lastIndex;else c.lastIndex=
+d.lastIndex;b.push(e[0])}return b}
+function qa(a,b){return t(function*(){var d=[],c=[];a.forEach(e=>{if("cssRules"in e)try{w(e.cssRules||[]).forEach((f,g)=>{if(f.type===CSSRule.IMPORT_RULE){let k=g+1;f=V(f.href).then(m=>W(m,b)).then(m=>X(m).forEach(q=>{try{e.insertRule(q,q.startsWith("@import")?k+=1:e.cssRules.length)}catch(Da){}})).catch(()=>{});c.push(f)}})}catch(f){let g=a.find(k=>k.href==null)||document.styleSheets[0];e.href!=null&&c.push(V(e.href).then(k=>W(k,b)).then(k=>X(k).forEach(m=>{g.insertRule(m,g.cssRules.length)})).catch(()=>
+{}))}});return Promise.all(c).then(()=>{a.forEach(e=>{if("cssRules"in e)try{w(e.cssRules||[]).forEach(f=>{d.push(f)})}catch(f){}});return d})})}function ra(a){return a.filter(b=>b.type===CSSRule.FONT_FACE_RULE).filter(b=>b.style.getPropertyValue("src").search(Q)!==-1)}function sa(a,b){return t(function*(){if(a.ownerDocument==null)throw Error("Provided element is not within a Document");var d=w(a.ownerDocument.styleSheets);d=yield qa(d,b);return ra(d)})}
+function ta(a){function b(c){(c.style.fontFamily||getComputedStyle(c).fontFamily).split(",").forEach(e=>{d.add(e.trim().replace(/["']/g,""))});Array.from(c.children).forEach(e=>{e instanceof HTMLElement&&b(e)})}var d=new Set;b(a);return d}function ua(a,b){return t(function*(){var d=yield sa(a,b),c=ta(a);return(yield Promise.all(d.filter(e=>c.has(e.style.fontFamily.trim().replace(/["']/g,""))).map(e=>R(e.cssText,e.parentStyleSheet?e.parentStyleSheet.href:null,b)))).join("\n")})}
+function va(a,b){return t(function*(){var d=b.j!=null?b.j:b.K?null:yield ua(a,b);if(d){let c=document.createElement("style");c.appendChild(document.createTextNode(d));a.firstChild?a.insertBefore(c,a.firstChild):a.appendChild(c)}})};function wa(a,b={}){return t(function*(){var {width:d,height:c}=A(a,b),e=yield P(a,b,!0);yield va(e,b);yield T(e,b);u(e,b);return yield D(e,d,c)})}
+function xa(a,b={}){return t(function*(){var {width:d,height:c}=A(a,b),e=yield wa(a,b);e=yield B(e);var f=document.createElement("canvas"),g=f.getContext("2d"),k=b.G||window.devicePixelRatio||1,m=b.h||d,q=b.g||c;f.width=m*k;f.height=q*k;!b.J&&(f.width>16384||f.height>16384)&&(f.width>16384&&f.height>16384?f.width>f.height?(f.height*=16384/f.width,f.width=16384):(f.width*=16384/f.height,f.height=16384):f.width>16384?(f.height*=16384/f.width,f.width=16384):(f.width*=16384/f.height,f.height=16384));
+f.style.width=`${m}`;f.style.height=`${q}`;b.backgroundColor&&(g.fillStyle=b.backgroundColor,g.fillRect(0,0,f.width,f.height));g.drawImage(e,0,0,f.width,f.height);return f})}function ya(a,b={}){return t(function*(){return(yield xa(a,b)).toDataURL()})};const za=["gemini.google.com","corp.google.com","proxy.googlers.com"];function Y(){return document.body.querySelectorAll('[class*="animate"]').length>0}function Z(a){return t(function*(){try{return yield ya(a,{h:a.offsetWidth,g:a.offsetHeight})}catch(d){var b=a.offsetHeight;let c=document.createElement("canvas");c.width=a.offsetWidth;c.height=b;return c.toDataURL("image/png")}})}
+function Aa(){return t(function*(){var a=document.body.offsetWidth,b=document.body.offsetHeight,d=document.body.cloneNode(!0);d.querySelectorAll('[class*="animate"]').forEach(c=>{c.classList.remove(...Array.from(c.classList).filter(e=>e.startsWith("animate")))});d.style.width=`${a}px`;d.style.height=`${b}px`;return d})}
+function Ba(a){return t(function*(){var b=document.body;if(Y()){var d=yield Aa();b=d;document.body.appendChild(d)}d=yield Z(b);Y()&&document.body.removeChild(b);window.parent.postMessage({type:"SEND_SCREENSHOT",image:d,topOffset:document.documentElement.scrollTop},a.origin)})}function Ca(a){return t(function*(){var b={type:"SEND_SCREENSHOT_FOR_DATA_VISUALIZATION",image:yield Z(document.body),topOffset:0};window.parent.postMessage(b,a.origin)})}
+window.addEventListener("message",a=>t(function*(){if(za.some(d=>a.origin.includes(d))){var b=a.data;b&&(b.type==="MAKE_SCREENSHOT"&&(yield Ba(a)),b.type==="MAKE_SCREENSHOT_FOR_DATA_VISUALIZATION"&&(yield Ca(a)))}}));
+})();</script><script>(function() {
+  // Ensure this script is executed only once
+  if (window.firebaseAuthBridgeScriptLoaded) {
+    return;
+  }
+  window.firebaseAuthBridgeScriptLoaded = true;
+
+  let nextTokenPromiseId = 0;
+
+  // Stores { resolve, reject } for ongoing token requests
+  const pendingTokenPromises = {};
+
+  // Listen for messages from the Host Application
+  window.addEventListener('message', function(event) {
+
+    const messageData = event.data;
+
+  if (messageData && messageData.type === 'RESOLVE_NEW_FIREBASE_TOKEN') {
+      const { success, token, error, promiseId } = messageData ?? {};
+      if (pendingTokenPromises[promiseId]) {
+        if (success) {
+          pendingTokenPromises[promiseId].resolve(token);
+        } else {
+          pendingTokenPromises[promiseId].reject(new Error(error || 'Token refresh failed from host.'));
+        }
+        delete pendingTokenPromises[promiseId];
+      }
+    }
+  });
+
+  // Expose a function for the Generated App to request a new Firebase token
+  window.requestNewFirebaseToken = function() {
+    const currentPromiseId = nextTokenPromiseId++;
+    const promise = new Promise((resolve, reject) => {
+      pendingTokenPromises[currentPromiseId] = { resolve, reject };
+    });
+    if (window.parent && window.parent !== window) {
+      window.parent.postMessage({
+        type: 'REQUEST_NEW_FIREBASE_TOKEN',
+        promiseId: currentPromiseId
+      }, '*');
+    } else {
+      pendingTokenPromises[currentPromiseId].reject(new Error('No parent window to request token from.'));
+      delete pendingTokenPromises[currentPromiseId];
+    }
+    return promise;
+  };
+})();</script><script>
+let realOriginalGetUserMedia = null;
+if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+  realOriginalGetUserMedia = navigator.mediaDevices.getUserMedia.bind(navigator.mediaDevices);
+}
+
+(function() {
+  if (navigator.mediaDevices && navigator.mediaDevices.__proto__) {
+    try {
+      Object.defineProperty(navigator.mediaDevices.__proto__, 'getUserMedia', {
+        get: function() {
+          return undefined; // Or throw an error
+        },
+        configurable: false
+      });
+    } catch (error) {
+      console.error("Error defining prototype getter:", error);
+    }
+  }
+})();
+
+(function() {
+  const pendingMediaResolvers = {};
+  let nextMediaPromiseId = 0;
+
+  function requestMediaPermissions(constraints) {
+    const mediaPromiseId = nextMediaPromiseId++;
+    const promise = new Promise((resolve, reject) => {
+      pendingMediaResolvers[mediaPromiseId] = (granted) => {
+        delete pendingMediaResolvers[mediaPromiseId];
+        resolve(granted);
+      };
+    });
+
+    window.parent.postMessage({
+      type: 'requestMediaPermission',
+      constraints: constraints,
+      promiseId: mediaPromiseId,
+    }, '*');
+
+    return promise;
+  }
+
+  let originalGetUserMedia = realOriginalGetUserMedia;
+
+  function interceptGetUserMedia() {
+    if (navigator.mediaDevices) {
+      Object.defineProperty(navigator.mediaDevices, 'getUserMedia', {
+        value: function(constraints) {
+          return requestMediaPermissions(constraints).then((granted) => {
+            if (granted) {
+              if (originalGetUserMedia) {
+                return originalGetUserMedia(constraints);
+              } else {
+                throw new Error("Original getUserMedia not available.");
+              }
+            } else {
+              throw new DOMException('Permission denied', 'NotAllowedError');
+            }
+          });
+        },
+        writable: false,
+        configurable: false
+      });
+    }
+  }
+
+  interceptGetUserMedia();
+
+  const observer = new MutationObserver(function(mutationsList, observer) {
+    for (const mutation of mutationsList) {
+      if (mutation.type === 'reconfigured' && mutation.name === 'getUserMedia' && mutation.object === navigator.mediaDevices) {
+        interceptGetUserMedia();
+      } else if (mutation.type === 'attributes' && mutation.attributeName === 'getUserMedia' && mutation.target === navigator.mediaDevices) {
+        interceptGetUserMedia();
+      } else if (mutation.type === 'childList' && mutation.addedNodes) {
+        mutation.addedNodes.forEach(node => {
+          if (node === navigator.mediaDevices) {
+            interceptGetUserMedia();
+          }
+        });
+      }
+    }
+  });
+
+  function interceptSpeechRecognition() {
+    if (!window.SpeechRecognition && !window.webkitSpeechRecognition) {
+      return;
+    }
+
+    const OriginalSpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+    const SpeechRecognitionWrapper = function(...args) {
+      const recognizer = new OriginalSpeechRecognition(...args);
+      const originalStart = recognizer.start.bind(recognizer);
+
+      recognizer.start = function() {
+        requestMediaPermissions({ audio: true }).then(granted => {
+          if (granted) {
+            originalStart();
+          } else {
+            const errorEvent = new SpeechRecognitionErrorEvent('error');
+            errorEvent.error = 'not-allowed'; // This is the standard error for permission denial.
+            recognizer.dispatchEvent(errorEvent);
+          }
+        });
+      };
+
+      return recognizer;
+    };
+
+    SpeechRecognitionWrapper.prototype = OriginalSpeechRecognition.prototype;
+    SpeechRecognitionWrapper.prototype.constructor = SpeechRecognitionWrapper;
+
+    if (window.SpeechRecognition) {
+      window.SpeechRecognition = SpeechRecognitionWrapper;
+    }
+    if (window.webkitSpeechRecognition) {
+      window.webkitSpeechRecognition = SpeechRecognitionWrapper;
+    }
+  }
+
+  interceptSpeechRecognition();
+
+  window.addEventListener('message', function(event) {
+    if (event.data) {
+      if (event.data.type === 'resolveMediaPermission') {
+        const { promiseId, granted } = event.data;
+        if (pendingMediaResolvers[promiseId]) {
+          pendingMediaResolvers[promiseId](granted);
+        }
+      }
+    }
+  });
+
+})();</script><script ws-interception-config="{&quot;parentOrigin&quot;:&quot;https://gemini.google.com&quot;,&quot;proxiedDomains&quot;:[]}">(function(){'use strict';var u=typeof Object.defineProperties=="function"?Object.defineProperty:function(b,d,e){if(b==Array.prototype||b==Object.prototype)return b;b[d]=e.value;return b};function v(b){b=["object"==typeof globalThis&&globalThis,b,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var d=0;d<b.length;++d){var e=b[d];if(e&&e.Math==Math)return e}throw Error("Cannot find global object");}var w=v(this);
+function y(b,d){if(d)a:{var e=w;b=b.split(".");for(var h=0;h<b.length-1;h++){var k=b[h];if(!(k in e))break a;e=e[k]}b=b[b.length-1];h=e[b];d=d(h);d!=h&&d!=null&&u(e,b,{configurable:!0,writable:!0,value:d})}}function z(b){function d(h){return b.next(h)}function e(h){return b.throw(h)}return new Promise(function(h,k){function m(n){n.done?h(n.value):Promise.resolve(n.value).then(d,e).then(m,k)}m(b.next())})}y("globalThis",function(b){return b||w});/*
+
+ Copyright The Closure Library Authors.
+ SPDX-License-Identifier: Apache-2.0
+*/
+function A(b,d){function e(){}e.prototype=d.prototype;b.i=d.prototype;b.prototype=new e;b.prototype.constructor=b;b.g=function(h,k,m){for(var n=Array(arguments.length-2),p=2;p<arguments.length;p++)n[p-2]=arguments[p];return d.prototype[k].apply(h,n)}};function B(b,d,e="*"){function h(a){if(typeof a==="string")return F.encode(a).buffer;if(a instanceof ArrayBuffer)return a.slice(0);if(ArrayBuffer.isView(a))return a.buffer.slice(a.byteOffset,a.byteOffset+a.byteLength);throw Error("Invalid data type");}function k(a){a=h(a);var f={type:"send",data:new Uint8Array(a)},g;(g=r)==null||g.postMessage(f,[a])}function m(){if(!r)throw Error("Data port not captured yet.");r.onmessage=a=>{if(a.data.type==="message"){a=new MessageEvent("message",{data:G.decode(a.data.data)});
+let f;(f=c.onmessage)==null||f.call(c,a);c.dispatchEvent(a)}}}function n(){if(!t)throw Error("Control port not captured yet.");t.onmessage=a=>{switch(a.data.type){case "open":l=1;var f=new Event("open"),g;(g=c.onopen)==null||g.call(c,f);c.dispatchEvent(f);q.forEach(H=>{k(H)});q=[];break;case "close":g=a.data;l=3;g=new CloseEvent("close",{code:g.code,reason:g.reason,wasClean:g.wasClean});(f=c.onclose)==null||f.call(c,g);c.dispatchEvent(g);break;case "error":l=3;f=new Event("error");let x;(x=c.onerror)==
+null||x.call(c,f);c.dispatchEvent(f)}}}function p(a){return z(function*(){var f=new MessageChannel;t=f.port1;var g=new MessageChannel;r=g.port1;n();m();window.parent.postMessage({type:"websocket_open",portOrdering:["control","data"],url:b,protocols:a||[],connectionId:I},e,[f.port2,g.port2])}())}var c=Reflect.construct(EventTarget,[],new.target);c.CONNECTING=0;c.OPEN=1;c.CLOSING=2;c.CLOSED=3;c.url=b;c.binaryType="arraybuffer";c.protocol="";c.h="";var l=0,t=null,r=null,q=[],F=new TextEncoder,G=new TextDecoder;
+c.onopen=null;c.onmessage=null;c.onclose=null;c.onerror=null;Object.defineProperty(c,"readyState",{get:()=>l,enumerable:!0,configurable:!0});Object.defineProperty(c,"bufferedAmount",{get:()=>{var a=0;q.forEach(f=>{a+=typeof f==="string"?f.length:f.byteLength});return a},enumerable:!0,configurable:!0});var I=function(){var a;return((a=globalThis.crypto)==null?0:a.randomUUID)?globalThis.crypto.randomUUID():"xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g,f=>{var g=Math.random()*16|0;return(f===
+"x"?g:g&3|8).toString(16)})}();c.send=a=>{if(l===1)a instanceof Blob?a.arrayBuffer().then(f=>{k(f)}):k(a);else if(l===0)if(typeof a==="string")q.push(a);else if(a instanceof ArrayBuffer||ArrayBuffer.isView(a))q.push(h(a));else throw Error("Sending Blob is not supported before the connection is open.");else console.debug("WebSocket send called in CLOSING or CLOSED state; ignored.")};c.close=(a=1E3,f="")=>{if(l!==2&&l!==3){l=2;a={type:"close",code:a,reason:f,wasClean:a===1E3};var g;(g=t)==null||g.postMessage(a)}};
+Promise.resolve().then(()=>p(d));return c}A(B,EventTarget);var C=document.currentScript,D=C==null?void 0:C.getAttribute("ws-interception-config");if(!D)throw Error("WebSocket Interceptor: Missing ws-interception-config attribute in the script tag.");var E=JSON.parse(D);if(!E.parentOrigin||typeof E.parentOrigin!=="string")throw Error("WebSocket Interceptor: Invalid parentOrigin in ws-interception-config");
+(function(b){var d=Object.getOwnPropertyDescriptor(window,"WebSocket");if(!d||d.writable||d.configurable)d=Object.assign(function(e,h){try{let k=(new URL(e)).hostname;if(b.proxiedDomains.some(m=>k===m||k.endsWith(`.${m}`)))return new B(e,h,b.parentOrigin)}catch(k){throw window.parent.postMessage({type:"websocket_blocked",url:e,reason:"blocked_invalid_url"},b.parentOrigin),new DOMException(`WebSocket connection to '${e}' is not allowed in Canvas.`,"SecurityError");}window.parent.postMessage({type:"websocket_blocked",
+url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMException(`WebSocket connection to '${e}' is not allowed in Canvas.`,"SecurityError");},{CONNECTING:0,OPEN:1,CLOSING:2,CLOSED:3}),Object.defineProperty(window,"WebSocket",{value:d,writable:!1,configurable:!1})})({proxiedDomains:E.proxiedDomains||[],parentOrigin:E.parentOrigin});}).call(this);
+</script><script>((function(modelInformation) {
+  const originalFetch = window.fetch;
+  // TODO: b/421908508 - Move these out of the script and match all generative AI model calls.
+  let googleLlmBaseApiUrls = [
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.textModelName + ':streamGenerateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.textModelName + ':generateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageModelName + ':predict',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageModelName + ':predictLongRunning',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageEditModelName + ':generateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageTransformModelName + ':generateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.videoModelName + ':predict',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.videoModelName + ':predictLongRunning',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.ttsModelName + ':generateContent',
+  ];
+  modelInformation.deprecatedTextModelNames.forEach((modelName) => {
+    googleLlmBaseApiUrls.push(
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':streamGenerateContent',
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':generateContent',
+    );
+  });
+  modelInformation.deprecatedImageModelNames.forEach((modelName) => {
+    googleLlmBaseApiUrls.push(
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':predict',
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':predictLongRunning',
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':generateContent',
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':streamGenerateContent',
+    );
+  });
+  modelInformation.deprecatedGenerateImageModelNames.forEach((modelName) => {
+    googleLlmBaseApiUrls.push(
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':generateContent',
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':streamGenerateContent',
+    );
+  });
+
+  const pendingFetchResolvers = {};
+  let nextPromiseId = 0;
+
+  function handleStringInput(input, optionsArgument) {
+    const actualUrl = input;
+    const fetchCallArgs = [actualUrl, optionsArgument];
+    const effectiveOptions = optionsArgument || {};
+    const bodyForApiKeyCheck = effectiveOptions.body;
+    const bodyForPostMessage = effectiveOptions.body;
+    return { actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage };
+  }
+
+  function handleRequestInput(input, optionsArgument) {
+    const actualUrl = input.url;
+    const fetchCallArgs = [input, optionsArgument];
+    const effectiveOptions = { method: input.method, headers: new Headers(input.headers) };
+    let bodyForApiKeyCheck;
+    let bodyForPostMessage;
+
+    if (optionsArgument) {
+      if (optionsArgument.method) effectiveOptions.method = optionsArgument.method;
+      if (optionsArgument.headers) effectiveOptions.headers = new Headers(optionsArgument.headers);
+      if ('body' in optionsArgument) {
+        bodyForApiKeyCheck = optionsArgument.body;
+        bodyForPostMessage = optionsArgument.body;
+      } else {
+        bodyForApiKeyCheck = undefined;
+        bodyForPostMessage = input.body;
+      }
+    } else {
+      bodyForApiKeyCheck = undefined;
+      bodyForPostMessage = input.body;
+    }
+    return { actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage };
+  }
+
+  window.fetch = function(input, optionsArgument) {
+    let actualUrl;
+    let fetchCallArgs;
+    let effectiveOptions = {};
+    let bodyForApiKeyCheck;
+    let bodyForPostMessage;
+
+    if (typeof input === 'string') {
+      ({actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage} = handleStringInput(input, optionsArgument));
+    } else if (input instanceof Request) {
+      ({actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage} = handleRequestInput(input, optionsArgument));
+    } else {
+      return originalFetch.apply(window, [input, optionsArgument]);
+    }
+
+    effectiveOptions.method = effectiveOptions.method || 'GET';
+    if (!effectiveOptions.headers) {
+      effectiveOptions.headers = new Headers();
+    }
+
+
+    if (typeof actualUrl === 'string' && googleLlmBaseApiUrls.some((url) => actualUrl.startsWith(url))) {
+      let apiKeyIsNull = true;
+
+      const regex = new RegExp("models/([^:]+)");
+      const modelNameMatch = actualUrl.match(regex);
+      const modelName = modelNameMatch ? modelNameMatch[1] : 'unspecified';
+
+
+      try {
+        const urlObject = new URL(actualUrl);  // Use URL object for robust parsing
+        const apiKeyParam = urlObject.searchParams.get('key');
+        if (apiKeyParam) {
+          apiKeyIsNull = false;
+        }
+      } catch (e) {
+        // Continue checks even if URL parsing fails
+      }
+
+      if (apiKeyIsNull && effectiveOptions.headers) {
+        const h = new Headers(effectiveOptions.headers);
+        const apiKeyHeaderValue = h.get('X-API-Key') || h.get('x-api-key');
+        if (apiKeyHeaderValue) {
+          apiKeyIsNull = false;
+          return originalFetch.apply(window, fetchCallArgs);
+        }
+      }
+
+      if (apiKeyIsNull && effectiveOptions.method && ['POST', 'PUT', 'PATCH'].includes(effectiveOptions.method.toUpperCase()) && typeof bodyForApiKeyCheck === 'string') {
+        try {
+          const bodyData = JSON.parse(bodyForApiKeyCheck);
+          if (bodyData && bodyData.apiKey) {
+            apiKeyIsNull = false;
+            return originalFetch.apply(window, fetchCallArgs);
+          }
+        } catch (e) {
+          // Ignore JSON parsing errors
+        }
+      }
+
+      if(apiKeyIsNull) {
+        const promiseId = nextPromiseId++;
+        const promise = new Promise((resolve) => {
+          pendingFetchResolvers[promiseId] = (resolvedResponse) => {
+            delete pendingFetchResolvers[promiseId];
+            resolve(resolvedResponse);
+          };
+        });
+
+        let serializedBodyForPostMessage;
+        if (typeof bodyForPostMessage === 'string' || bodyForPostMessage == null) {
+            serializedBodyForPostMessage = bodyForPostMessage;
+        } else if (bodyForPostMessage instanceof ReadableStream) {
+            serializedBodyForPostMessage = null;
+        } else {
+            try {
+                serializedBodyForPostMessage = JSON.stringify(bodyForPostMessage);
+            } catch (e) {
+                serializedBodyForPostMessage = null;
+            }
+        }
+
+        const messageOptions = {
+            method: effectiveOptions.method,
+            headers: Object.fromEntries(new Headers(effectiveOptions.headers).entries()),
+            body: serializedBodyForPostMessage
+        };
+
+        window.parent.postMessage({
+          type: 'requestFetch',
+          url: actualUrl,
+          modelName: modelName,
+          options: messageOptions,
+          promiseId: promiseId,
+        }, '*');
+
+        return promise;
+      }
+      return originalFetch.apply(window, fetchCallArgs);
+    }
+    return originalFetch.apply(window, fetchCallArgs);
+  };
+
+  window.addEventListener('message', function(event) {
+    if (event.data && event.data.type === 'resolveFetch') {
+      const { promiseId, response } = event.data;
+      if (pendingFetchResolvers[promiseId]) {
+        try {
+          const reconstructedResponse = new Response(response.body, {
+            status: response.status,
+            statusText: response.statusText,
+            headers: new Headers(response.headers),
+          });
+          pendingFetchResolvers[promiseId](reconstructedResponse);
+        } catch (error) {
+          pendingFetchResolvers[promiseId](new Response(null, { status: 500, statusText: "Interceptor Response Reconstruction Error" }));
+        }
+      }
+    }
+  });
+
+}))({"textModelName":"gemini-3-flash-preview","imageModelName":"imagen-4.0-generate-001","imageEditModelName":"gemini-3.1-flash-image-preview","imageTransformModelName":"gemini-3-pro-image-preview-11-2025","videoModelName":"veo-2.0-generate-001","ttsModelName":"gemini-2.5-flash-preview-tts","deprecatedTextModelNames":["gemini-2.0-flash","gemini-2.5-flash","gemini-2.5-flash-preview-04-17","gemini-2.5-flash-preview-05-20","gemini-2.5-flash-preview-09-2025"],"deprecatedImageModelNames":["imagen-3.0-generate-001","imagen-3.0-generate-002"],"deprecatedGenerateImageModelNames":["gemini-2.5-flash-image-preview","gemini-2.5-flash-image"]})</script><script>(function(){'use strict';function a(){window.parent.postMessage({type:"interaction"},"*")}window.addEventListener("click",a,{capture:!0,passive:!0});window.addEventListener("touchstart",a,{capture:!0,passive:!0});window.addEventListener("keydown",a,{capture:!0,passive:!0});}).call(this);
+</script><script>(function() {
+  const originalConsoleLog = console.log;
+  const originalConsoleError = console.error;
+
+    /**
+   * Normalizes an error event or a promise rejection reason into a structured error object.
+   * @param {*} errorEventOrReason The error object or reason.
+   * @return {object} Structured error data { message, name, stack }.
+   */
+  function getErrorObject(errorEventOrReason) {
+    if (errorEventOrReason instanceof Error) {
+      return {
+        message: errorEventOrReason.message,
+        name: errorEventOrReason.name,
+        stack: errorEventOrReason.stack,
+      };
+    }
+    // Fallback for non-Error objects.
+    try {
+      return {
+        message: JSON.stringify(errorEventOrReason),
+        name: 'UnknownErrorType',
+        stack: null,
+      };
+    } catch (e) {
+      return {
+        message: String(errorEventOrReason),
+        name: 'UnknownErrorTypeNonStringifiable',
+        stack: null,
+      };
+    }
+  }
+
+  /**
+   * Converts an array of arguments (from log/error) into a single string.
+   * Handles Error objects specially to include their message and stack.
+   * @param {Array<*>} args - Arguments passed to console methods.
+   * @return {string} A string representation of the arguments.
+   */
+  function stringifyArgs(args) {
+    return args
+      .map((arg) => {
+        if (arg instanceof Error) {
+          const {message, stack} = arg;
+          return `Error: ${message}${stack ? ('\nStack: ' + stack) : ''}`;
+        }
+        if (typeof arg === 'object' && arg !== null) {
+          try {
+            return JSON.stringify(arg);
+          } catch (error) {
+            return '[Circular Object]';
+          }
+        } else {
+          return String(arg);
+        }
+      })
+      .join(' ');
+  }
+
+  console.log = function(...args) {
+    const logString = stringifyArgs(args);
+    window.parent.postMessage({ type: 'log', message: logString }, '*');
+    originalConsoleLog.apply(console, args);
+  };
+
+  console.error = function(...args) {
+    let errorData;
+    if (args.length > 0 && args[0] instanceof Error) {
+      const err = args[0];
+      // If the first arg is an Error, capture its details.
+      errorData = {
+        type: 'error',
+        source: 'CONSOLE_ERROR',
+        ...getErrorObject(err),
+        rawArgsString: stringifyArgs(args.slice(1)),
+        timestamp: new Date().toISOString(),
+      };
+    } else {
+      // If not an Error object, treat all args as a general error message.
+      errorData = {
+        type: 'error',
+        source: 'CONSOLE_ERROR',
+        message: stringifyArgs(args),
+        name: 'ConsoleLoggedError',
+        stack: null,
+        timestamp: new Date().toISOString(),
+      };
+    }
+    window.parent.postMessage(errorData, '*');
+    originalConsoleError.apply(console, args);
+  };
+
+  // Listen for global unhandled synchronous errors.
+  window.addEventListener('error', function(event) {
+    const errorDetails = event.error ? getErrorObject(event.error) : {
+      message: event.message,
+      name: 'GlobalError',
+      stack: null,
+      filename: event.filename,
+      lineno: event.lineno,
+      colno: event.colno,
+    };
+
+    window.parent.postMessage({
+      type: 'error',
+      source: 'global',
+      ...errorDetails,
+      message: errorDetails.message || event.message,
+      timestamp: new Date().toISOString(),
+    }, '*');
+  });
+
+  // Listen for unhandled promise rejections (asynchronous errors).
+  window.addEventListener('unhandledrejection', function(event) {
+    const errorDetails = getErrorObject(event.reason);
+
+    window.parent.postMessage({
+      type: 'error',
+      source: 'unhandledrejection',
+      ...errorDetails,
+      message: errorDetails.message || 'Unhandled Promise Rejection',
+      timestamp: new Date().toISOString(),
+    }, '*');
+  });
+
+})();</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>삼육대학교 제위원회 기능 조회 시스템 (2026.05.15)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+        
+        :root {
+            --syu-green: #004a26;
+            --syu-light-green: #e6f0eb;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #f8fafc;
+            color: #334155;
+            overflow: hidden;
+        }
+
+        .sidebar-item-active {
+            background-color: var(--syu-green);
+            color: white !important;
+            box-shadow: 0 4px 12px rgba(0, 74, 38, 0.2);
+        }
+
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: #f1f5f9; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+
+        .table-row:hover { background-color: #f8fafc; }
+        .modal-backdrop { background-color: rgba(15, 23, 42, 0.7); backdrop-filter: blur(4px); }
+        
+        .btn-view { transition: all 0.2s; }
+        .btn-view:hover { transform: translateY(-1px); box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); }
+        
+        .line-clamp-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;  
+            overflow: hidden;
+        }
+    </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.inset-0{inset:0px}.bottom-3{bottom:0.75rem}.left-4{left:1rem}.right-5{right:1.25rem}.top-5{top:1.25rem}.z-10{z-index:10}.z-20{z-index:20}.z-\[100\]{z-index:100}.mx-auto{margin-left:auto;margin-right:auto}.mb-1{margin-bottom:0.25rem}.mb-2{margin-bottom:0.5rem}.mb-3{margin-bottom:0.75rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.ml-1{margin-left:0.25rem}.mt-1{margin-top:0.25rem}.mt-0\.5{margin-top:0.125rem}.block{display:block}.inline-block{display:inline-block}.flex{display:flex}.inline-flex{display:inline-flex}.table-row{display:table-row}.grid{display:grid}.hidden{display:none}.h-8{height:2rem}.h-screen{height:100vh}.max-h-\[60vh\]{max-height:60vh}.w-16{width:4rem}.w-72{width:18rem}.w-8{width:2rem}.w-full{width:100%}.w-screen{width:100vw}.min-w-0{min-width:0px}.max-w-2xl{max-width:42rem}.max-w-7xl{max-width:80rem}.flex-1{flex:1 1 0%}.border-collapse{border-collapse:collapse}.transform{transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.flex-col{flex-direction:column}.items-center{align-items:center}.justify-end{justify-content:flex-end}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.space-y-1 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.25rem * var(--tw-space-y-reverse))}.space-y-6 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.5rem * var(--tw-space-y-reverse))}.divide-y > :not([hidden]) ~ :not([hidden]){--tw-divide-y-reverse:0;border-top-width:calc(1px * calc(1 - var(--tw-divide-y-reverse)));border-bottom-width:calc(1px * var(--tw-divide-y-reverse))}.divide-slate-100 > :not([hidden]) ~ :not([hidden]){--tw-divide-opacity:1;border-color:rgb(241 245 249 / var(--tw-divide-opacity, 1))}.overflow-hidden{overflow:hidden}.overflow-y-auto{overflow-y:auto}.whitespace-pre-line{white-space:pre-line}.rounded-2xl{border-radius:1rem}.rounded-3xl{border-radius:1.5rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-xl{border-radius:0.75rem}.rounded-md{border-radius:0.375rem}.border{border-width:1px}.border-b{border-bottom-width:1px}.border-l{border-left-width:1px}.border-r{border-right-width:1px}.border-t{border-top-width:1px}.border-blue-100{--tw-border-opacity:1;border-color:rgb(219 234 254 / var(--tw-border-opacity, 1))}.border-emerald-100{--tw-border-opacity:1;border-color:rgb(209 250 229 / var(--tw-border-opacity, 1))}.border-slate-100{--tw-border-opacity:1;border-color:rgb(241 245 249 / var(--tw-border-opacity, 1))}.border-slate-200{--tw-border-opacity:1;border-color:rgb(226 232 240 / var(--tw-border-opacity, 1))}.bg-\[\#004a26\]{--tw-bg-opacity:1;background-color:rgb(0 74 38 / var(--tw-bg-opacity, 1))}.bg-black\/10{background-color:rgb(0 0 0 / 0.1)}.bg-blue-50\/50{background-color:rgb(239 246 255 / 0.5)}.bg-emerald-50\/50{background-color:rgb(236 253 245 / 0.5)}.bg-slate-50{--tw-bg-opacity:1;background-color:rgb(248 250 252 / var(--tw-bg-opacity, 1))}.bg-slate-50\/50{background-color:rgb(248 250 252 / 0.5)}.bg-slate-50\/80{background-color:rgb(248 250 252 / 0.8)}.bg-slate-800{--tw-bg-opacity:1;background-color:rgb(30 41 59 / var(--tw-bg-opacity, 1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-white\/20{background-color:rgb(255 255 255 / 0.2)}.bg-blue-50{--tw-bg-opacity:1;background-color:rgb(239 246 255 / var(--tw-bg-opacity, 1))}.bg-emerald-50{--tw-bg-opacity:1;background-color:rgb(236 253 245 / var(--tw-bg-opacity, 1))}.bg-slate-100{--tw-bg-opacity:1;background-color:rgb(241 245 249 / var(--tw-bg-opacity, 1))}.p-2{padding:0.5rem}.p-3{padding:0.75rem}.p-4{padding:1rem}.p-5{padding:1.25rem}.p-6{padding:1.5rem}.p-8{padding:2rem}.px-2{padding-left:0.5rem;padding-right:0.5rem}.px-4{padding-left:1rem;padding-right:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.px-8{padding-left:2rem;padding-right:2rem}.py-0\.5{padding-top:0.125rem;padding-bottom:0.125rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-2\.5{padding-top:0.625rem;padding-bottom:0.625rem}.py-32{padding-top:8rem;padding-bottom:8rem}.py-4{padding-top:1rem;padding-bottom:1rem}.px-1\.5{padding-left:0.375rem;padding-right:0.375rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-5{padding-top:1.25rem;padding-bottom:1.25rem}.pl-11{padding-left:2.75rem}.pl-4{padding-left:1rem}.pr-10{padding-right:2.5rem}.pr-4{padding-right:1rem}.text-left{text-align:left}.text-center{text-align:center}.text-right{text-align:right}.text-2xl{font-size:1.5rem;line-height:2rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-\[10px\]{font-size:10px}.text-\[11px\]{font-size:11px}.text-\[13px\]{font-size:13px}.text-\[9px\]{font-size:9px}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-black{font-weight:900}.font-bold{font-weight:700}.font-medium{font-weight:500}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.leading-relaxed{line-height:1.625}.leading-tight{line-height:1.25}.tracking-tight{letter-spacing:-0.025em}.tracking-tighter{letter-spacing:-0.05em}.tracking-widest{letter-spacing:0.1em}.text-\[\#004a26\]{--tw-text-opacity:1;color:rgb(0 74 38 / var(--tw-text-opacity, 1))}.text-blue-600{--tw-text-opacity:1;color:rgb(37 99 235 / var(--tw-text-opacity, 1))}.text-emerald-600{--tw-text-opacity:1;color:rgb(5 150 105 / var(--tw-text-opacity, 1))}.text-slate-200{--tw-text-opacity:1;color:rgb(226 232 240 / var(--tw-text-opacity, 1))}.text-slate-300{--tw-text-opacity:1;color:rgb(203 213 225 / var(--tw-text-opacity, 1))}.text-slate-400{--tw-text-opacity:1;color:rgb(148 163 184 / var(--tw-text-opacity, 1))}.text-slate-500{--tw-text-opacity:1;color:rgb(100 116 139 / var(--tw-text-opacity, 1))}.text-slate-600{--tw-text-opacity:1;color:rgb(71 85 105 / var(--tw-text-opacity, 1))}.text-slate-700{--tw-text-opacity:1;color:rgb(51 65 85 / var(--tw-text-opacity, 1))}.text-slate-800{--tw-text-opacity:1;color:rgb(30 41 59 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-blue-700{--tw-text-opacity:1;color:rgb(29 78 216 / var(--tw-text-opacity, 1))}.text-emerald-700{--tw-text-opacity:1;color:rgb(4 120 87 / var(--tw-text-opacity, 1))}.opacity-70{opacity:0.7}.opacity-80{opacity:0.8}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-sm{--tw-shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-xl{--tw-shadow:0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.outline-none{outline:2px solid transparent;outline-offset:2px}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.hover\:bg-black:hover{--tw-bg-opacity:1;background-color:rgb(0 0 0 / var(--tw-bg-opacity, 1))}.hover\:bg-black\/20:hover{background-color:rgb(0 0 0 / 0.2)}.hover\:bg-blue-600:hover{--tw-bg-opacity:1;background-color:rgb(37 99 235 / var(--tw-bg-opacity, 1))}.hover\:bg-emerald-600:hover{--tw-bg-opacity:1;background-color:rgb(5 150 105 / var(--tw-bg-opacity, 1))}.hover\:bg-slate-100:hover{--tw-bg-opacity:1;background-color:rgb(241 245 249 / var(--tw-bg-opacity, 1))}.hover\:text-slate-800:hover{--tw-text-opacity:1;color:rgb(30 41 59 / var(--tw-text-opacity, 1))}.hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.focus\:bg-white:focus{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.focus\:ring-2:focus{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.focus\:ring-\[\#004a26\]:focus{--tw-ring-opacity:1;--tw-ring-color:rgb(0 74 38 / var(--tw-ring-opacity, 1))}@media (min-width: 768px){.md\:block{display:block}.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}}</style></head>
+<body class="flex h-screen w-screen overflow-hidden">
+
+    <!-- 사이드바 -->
+    <aside class="w-72 bg-white border-r border-slate-200 flex flex-col shadow-xl z-20">
+        <div class="p-6 border-b border-slate-100 bg-[#004a26] text-white">
+            <div class="flex items-center gap-3">
+                <div class="bg-white/20 p-2 rounded-lg">
+                    <i class="fas fa-university text-xl"></i>
+                </div>
+                <div>
+                    <h1 class="text-sm font-bold tracking-tight leading-tight">삼육대학교</h1>
+                    <p class="text-[10px] opacity-80 uppercase font-medium">Committee Portal</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="p-4 bg-slate-50/50">
+            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest px-2">상위기구 분류</span>
+        </div>
+
+        <nav id="categoryList" class="flex-1 overflow-y-auto custom-scrollbar p-3 space-y-1">
+            <button onclick="filterByCategory('전체')" id="cat-all" class="sidebar-item-active w-full flex items-center justify-between px-4 py-2.5 rounded-xl text-sm font-semibold transition-all">
+                <span>전체 위원회</span>
+                <span class="text-[10px] bg-white/20 px-2 py-0.5 rounded-full" id="count-all">51</span>
+            </button>
+            <!-- JS에서 카테고리 동적 생성 -->
+        <button id="cat-정책기구" class="w-full flex items-center justify-between px-4 py-2.5 rounded-xl text-sm font-medium transition-all text-slate-500 hover:bg-slate-100 hover:text-slate-800"><span>정책기구</span><span class="text-[9px] bg-slate-100 text-slate-400 font-bold px-1.5 py-0.5 rounded-md">12</span></button><button id="cat-총장행정자문기구" class="w-full flex items-center justify-between px-4 py-2.5 rounded-xl text-sm font-medium transition-all text-slate-500 hover:bg-slate-100 hover:text-slate-800"><span>총장행정자문기구</span><span class="text-[9px] bg-slate-100 text-slate-400 font-bold px-1.5 py-0.5 rounded-md">2</span></button><button id="cat-총장직속기구" class="w-full flex items-center justify-between px-4 py-2.5 rounded-xl text-sm font-medium transition-all text-slate-500 hover:bg-slate-100 hover:text-slate-800"><span>총장직속기구</span><span class="text-[9px] bg-slate-100 text-slate-400 font-bold px-1.5 py-0.5 rounded-md">11</span></button><button id="cat-교목처자문기구" class="w-full flex items-center justify-between px-4 py-2.5 rounded-xl text-sm font-medium transition-all text-slate-500 hover:bg-slate-100 hover:text-slate-800"><span>교목처 자문기구</span><span class="text-[9px] bg-slate-100 text-slate-400 font-bold px-1.5 py-0.5 rounded-md">3</span></button><button id="cat-기획정책자문기구" class="w-full flex items-center justify-between px-4 py-2.5 rounded-xl text-sm font-medium transition-all text-slate-500 hover:bg-slate-100 hover:text-slate-800"><span>기획정책자문기구</span><span class="text-[9px] bg-slate-100 text-slate-400 font-bold px-1.5 py-0.5 rounded-md">7</span></button><button id="cat-교무행정자문기구" class="w-full flex items-center justify-between px-4 py-2.5 rounded-xl text-sm font-medium transition-all text-slate-500 hover:bg-slate-100 hover:text-slate-800"><span>교무행정자문기구</span><span class="text-[9px] bg-slate-100 text-slate-400 font-bold px-1.5 py-0.5 rounded-md">4</span></button><button id="cat-입시행정자문기구" class="w-full flex items-center justify-between px-4 py-2.5 rounded-xl text-sm font-medium transition-all text-slate-500 hover:bg-slate-100 hover:text-slate-800"><span>입시행정자문기구</span><span class="text-[9px] bg-slate-100 text-slate-400 font-bold px-1.5 py-0.5 rounded-md">1</span></button><button id="cat-학생지원자문기구" class="w-full flex items-center justify-between px-4 py-2.5 rounded-xl text-sm font-medium transition-all text-slate-500 hover:bg-slate-100 hover:text-slate-800"><span>학생지원자문기구</span><span class="text-[9px] bg-slate-100 text-slate-400 font-bold px-1.5 py-0.5 rounded-md">2</span></button><button id="cat-사무행정자문기구" class="w-full flex items-center justify-between px-4 py-2.5 rounded-xl text-sm font-medium transition-all text-slate-500 hover:bg-slate-100 hover:text-slate-800"><span>사무행정자문기구</span><span class="text-[9px] bg-slate-100 text-slate-400 font-bold px-1.5 py-0.5 rounded-md">3</span></button><button id="cat-연구산학행정자문기구" class="w-full flex items-center justify-between px-4 py-2.5 rounded-xl text-sm font-medium transition-all text-slate-500 hover:bg-slate-100 hover:text-slate-800"><span>연구산학행정자문기구</span><span class="text-[9px] bg-slate-100 text-slate-400 font-bold px-1.5 py-0.5 rounded-md">1</span></button><button id="cat-대외협력자문기구" class="w-full flex items-center justify-between px-4 py-2.5 rounded-xl text-sm font-medium transition-all text-slate-500 hover:bg-slate-100 hover:text-slate-800"><span>대외협력자문기구</span><span class="text-[9px] bg-slate-100 text-slate-400 font-bold px-1.5 py-0.5 rounded-md">1</span></button><button id="cat-부속기관및기타자문기구" class="w-full flex items-center justify-between px-4 py-2.5 rounded-xl text-sm font-medium transition-all text-slate-500 hover:bg-slate-100 hover:text-slate-800"><span>부속기관 및 기타 자문기구</span><span class="text-[9px] bg-slate-100 text-slate-400 font-bold px-1.5 py-0.5 rounded-md">2</span></button><button id="cat-대학원자문기구" class="w-full flex items-center justify-between px-4 py-2.5 rounded-xl text-sm font-medium transition-all text-slate-500 hover:bg-slate-100 hover:text-slate-800"><span>대학원자문기구</span><span class="text-[9px] bg-slate-100 text-slate-400 font-bold px-1.5 py-0.5 rounded-md">2</span></button></nav>
+    </aside>
+
+    <!-- 메인 영역 -->
+    <main class="flex-1 flex flex-col min-w-0 bg-slate-50">
+        <header class="bg-white border-b border-slate-200 p-6 shadow-sm z-10">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex justify-between items-center mb-6">
+                    <div>
+                        <h2 class="text-2xl font-black text-slate-800">제위원회 기능 조회 및 관리</h2>
+                        <p class="text-sm text-slate-500 font-medium mt-1">
+                            <span class="text-[#004a26] font-bold">2026.05.15 현재</span> 151개 위원회 데이터 로드됨
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <button onclick="downloadHTML()" class="flex items-center gap-2 px-4 py-2 bg-slate-800 text-white rounded-xl text-xs font-bold hover:bg-black transition-all">
+                            <i class="fas fa-download"></i> 시스템 다운로드 (.html)
+                        </button>
+                        <div class="hidden md:block text-right border-l border-slate-200 pl-4">
+                            <span class="text-[11px] font-bold text-slate-400 uppercase tracking-tighter">Academic Year</span>
+                            <p class="text-sm font-bold text-slate-700">2026학년도 1학기</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 검색 필터 -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="relative group">
+                        <label class="text-[10px] font-bold text-slate-400 ml-1 mb-1 block uppercase">위원회 명칭 검색</label>
+                        <i class="fas fa-search absolute left-4 bottom-3 text-slate-300"></i>
+                        <input type="text" id="nameInput" oninput="runFilters()" placeholder="위원회명을 입력하세요..." class="w-full pl-11 pr-4 py-2 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-[#004a26] focus:bg-white outline-none transition-all text-sm">
+                    </div>
+                    <div class="relative group">
+                        <label class="text-[10px] font-bold text-slate-400 ml-1 mb-1 block uppercase">관리 부서 검색</label>
+                        <i class="fas fa-building absolute left-4 bottom-3 text-slate-300"></i>
+                        <input type="text" id="deptInput" oninput="runFilters()" placeholder="담당 부서명을 입력하세요..." class="w-full pl-11 pr-4 py-2 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-[#004a26] focus:bg-white outline-none transition-all text-sm">
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="flex-1 overflow-y-auto p-6 custom-scrollbar">
+            <div class="max-w-7xl mx-auto">
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-slate-50/80 text-[11px] font-bold text-slate-500 uppercase tracking-widest border-b border-slate-200">
+                                <th class="px-6 py-4 w-16 text-center">No.</th>
+                                <th class="px-6 py-4">위원회 정보</th>
+                                <th class="px-6 py-4 text-center">주요 기능</th>
+                                <th class="px-6 py-4 text-center">위원 명단</th>
+                                <th class="px-6 py-4 text-right">관리 부서</th>
+                            </tr>
+                        </thead>
+                        <tbody id="dataTableBody" class="text-[13px] divide-y divide-slate-100"><tr class="table-row group transition-all">
+                    <td class="px-6 py-5 text-center text-[10px] font-bold text-slate-300">#1</td>
+                    <td class="px-6 py-5">
+                        <div class="font-bold text-slate-800 text-sm">ESG위원회</div>
+                        <div class="text-[10px] text-slate-400 mt-0.5 font-medium">정책기구</div>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(1, 'function')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 text-emerald-700 text-[11px] font-bold rounded-xl border border-emerald-100 hover:bg-emerald-600 hover:text-white">
+                            <i class="fas fa-tasks"></i> 기능 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(1, 'members')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-700 text-[11px] font-bold rounded-xl border border-blue-100 hover:bg-blue-600 hover:text-white">
+                            <i class="fas fa-users"></i> 명단 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-right">
+                        <span class="inline-block px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded-lg border border-slate-200">
+                            기획처
+                        </span>
+                    </td>
+                </tr><tr class="table-row group transition-all">
+                    <td class="px-6 py-5 text-center text-[10px] font-bold text-slate-300">#2</td>
+                    <td class="px-6 py-5">
+                        <div class="font-bold text-slate-800 text-sm">교무위원회</div>
+                        <div class="text-[10px] text-slate-400 mt-0.5 font-medium">정책기구</div>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(2, 'function')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 text-emerald-700 text-[11px] font-bold rounded-xl border border-emerald-100 hover:bg-emerald-600 hover:text-white">
+                            <i class="fas fa-tasks"></i> 기능 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(2, 'members')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-700 text-[11px] font-bold rounded-xl border border-blue-100 hover:bg-blue-600 hover:text-white">
+                            <i class="fas fa-users"></i> 명단 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-right">
+                        <span class="inline-block px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded-lg border border-slate-200">
+                            교무처
+                        </span>
+                    </td>
+                </tr><tr class="table-row group transition-all">
+                    <td class="px-6 py-5 text-center text-[10px] font-bold text-slate-300">#3</td>
+                    <td class="px-6 py-5">
+                        <div class="font-bold text-slate-800 text-sm">교수회</div>
+                        <div class="text-[10px] text-slate-400 mt-0.5 font-medium">정책기구</div>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(3, 'function')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 text-emerald-700 text-[11px] font-bold rounded-xl border border-emerald-100 hover:bg-emerald-600 hover:text-white">
+                            <i class="fas fa-tasks"></i> 기능 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(3, 'members')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-700 text-[11px] font-bold rounded-xl border border-blue-100 hover:bg-blue-600 hover:text-white">
+                            <i class="fas fa-users"></i> 명단 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-right">
+                        <span class="inline-block px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded-lg border border-slate-200">
+                            교무처
+                        </span>
+                    </td>
+                </tr><tr class="table-row group transition-all">
+                    <td class="px-6 py-5 text-center text-[10px] font-bold text-slate-300">#4</td>
+                    <td class="px-6 py-5">
+                        <div class="font-bold text-slate-800 text-sm">교육이념구현위원회</div>
+                        <div class="text-[10px] text-slate-400 mt-0.5 font-medium">정책기구</div>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(4, 'function')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 text-emerald-700 text-[11px] font-bold rounded-xl border border-emerald-100 hover:bg-emerald-600 hover:text-white">
+                            <i class="fas fa-tasks"></i> 기능 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(4, 'members')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-700 text-[11px] font-bold rounded-xl border border-blue-100 hover:bg-blue-600 hover:text-white">
+                            <i class="fas fa-users"></i> 명단 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-right">
+                        <span class="inline-block px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded-lg border border-slate-200">
+                            교목처
+                        </span>
+                    </td>
+                </tr><tr class="table-row group transition-all">
+                    <td class="px-6 py-5 text-center text-[10px] font-bold text-slate-300">#5</td>
+                    <td class="px-6 py-5">
+                        <div class="font-bold text-slate-800 text-sm">대학건축위원회</div>
+                        <div class="text-[10px] text-slate-400 mt-0.5 font-medium">정책기구</div>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(5, 'function')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 text-emerald-700 text-[11px] font-bold rounded-xl border border-emerald-100 hover:bg-emerald-600 hover:text-white">
+                            <i class="fas fa-tasks"></i> 기능 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(5, 'members')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-700 text-[11px] font-bold rounded-xl border border-blue-100 hover:bg-blue-600 hover:text-white">
+                            <i class="fas fa-users"></i> 명단 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-right">
+                        <span class="inline-block px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded-lg border border-slate-200">
+                            건축안전관리팀
+                        </span>
+                    </td>
+                </tr><tr class="table-row group transition-all">
+                    <td class="px-6 py-5 text-center text-[10px] font-bold text-slate-300">#6</td>
+                    <td class="px-6 py-5">
+                        <div class="font-bold text-slate-800 text-sm">대학평의원회</div>
+                        <div class="text-[10px] text-slate-400 mt-0.5 font-medium">정책기구</div>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(6, 'function')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 text-emerald-700 text-[11px] font-bold rounded-xl border border-emerald-100 hover:bg-emerald-600 hover:text-white">
+                            <i class="fas fa-tasks"></i> 기능 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(6, 'members')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-700 text-[11px] font-bold rounded-xl border border-blue-100 hover:bg-blue-600 hover:text-white">
+                            <i class="fas fa-users"></i> 명단 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-right">
+                        <span class="inline-block px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded-lg border border-slate-200">
+                            기획처
+                        </span>
+                    </td>
+                </tr><tr class="table-row group transition-all">
+                    <td class="px-6 py-5 text-center text-[10px] font-bold text-slate-300">#7</td>
+                    <td class="px-6 py-5">
+                        <div class="font-bold text-slate-800 text-sm">대학혁신위원회</div>
+                        <div class="text-[10px] text-slate-400 mt-0.5 font-medium">정책기구</div>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(7, 'function')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 text-emerald-700 text-[11px] font-bold rounded-xl border border-emerald-100 hover:bg-emerald-600 hover:text-white">
+                            <i class="fas fa-tasks"></i> 기능 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(7, 'members')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-700 text-[11px] font-bold rounded-xl border border-blue-100 hover:bg-blue-600 hover:text-white">
+                            <i class="fas fa-users"></i> 명단 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-right">
+                        <span class="inline-block px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded-lg border border-slate-200">
+                            기획처
+                        </span>
+                    </td>
+                </tr><tr class="table-row group transition-all">
+                    <td class="px-6 py-5 text-center text-[10px] font-bold text-slate-300">#8</td>
+                    <td class="px-6 py-5">
+                        <div class="font-bold text-slate-800 text-sm">비상대책위원회</div>
+                        <div class="text-[10px] text-slate-400 mt-0.5 font-medium">정책기구</div>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(8, 'function')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 text-emerald-700 text-[11px] font-bold rounded-xl border border-emerald-100 hover:bg-emerald-600 hover:text-white">
+                            <i class="fas fa-tasks"></i> 기능 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(8, 'members')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-700 text-[11px] font-bold rounded-xl border border-blue-100 hover:bg-blue-600 hover:text-white">
+                            <i class="fas fa-users"></i> 명단 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-right">
+                        <span class="inline-block px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded-lg border border-slate-200">
+                            건축안전관리팀
+                        </span>
+                    </td>
+                </tr><tr class="table-row group transition-all">
+                    <td class="px-6 py-5 text-center text-[10px] font-bold text-slate-300">#9</td>
+                    <td class="px-6 py-5">
+                        <div class="font-bold text-slate-800 text-sm">위기관리위원회</div>
+                        <div class="text-[10px] text-slate-400 mt-0.5 font-medium">정책기구</div>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(9, 'function')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 text-emerald-700 text-[11px] font-bold rounded-xl border border-emerald-100 hover:bg-emerald-600 hover:text-white">
+                            <i class="fas fa-tasks"></i> 기능 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(9, 'members')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-700 text-[11px] font-bold rounded-xl border border-blue-100 hover:bg-blue-600 hover:text-white">
+                            <i class="fas fa-users"></i> 명단 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-right">
+                        <span class="inline-block px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded-lg border border-slate-200">
+                            건축안전관리팀
+                        </span>
+                    </td>
+                </tr><tr class="table-row group transition-all">
+                    <td class="px-6 py-5 text-center text-[10px] font-bold text-slate-300">#10</td>
+                    <td class="px-6 py-5">
+                        <div class="font-bold text-slate-800 text-sm">전인교육위원회</div>
+                        <div class="text-[10px] text-slate-400 mt-0.5 font-medium">정책기구</div>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(10, 'function')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 text-emerald-700 text-[11px] font-bold rounded-xl border border-emerald-100 hover:bg-emerald-600 hover:text-white">
+                            <i class="fas fa-tasks"></i> 기능 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(10, 'members')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-700 text-[11px] font-bold rounded-xl border border-blue-100 hover:bg-blue-600 hover:text-white">
+                            <i class="fas fa-users"></i> 명단 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-right">
+                        <span class="inline-block px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded-lg border border-slate-200">
+                            교목처
+                        </span>
+                    </td>
+                </tr><tr class="table-row group transition-all">
+                    <td class="px-6 py-5 text-center text-[10px] font-bold text-slate-300">#11</td>
+                    <td class="px-6 py-5">
+                        <div class="font-bold text-slate-800 text-sm">직원회</div>
+                        <div class="text-[10px] text-slate-400 mt-0.5 font-medium">정책기구</div>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(11, 'function')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 text-emerald-700 text-[11px] font-bold rounded-xl border border-emerald-100 hover:bg-emerald-600 hover:text-white">
+                            <i class="fas fa-tasks"></i> 기능 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(11, 'members')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-700 text-[11px] font-bold rounded-xl border border-blue-100 hover:bg-blue-600 hover:text-white">
+                            <i class="fas fa-users"></i> 명단 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-right">
+                        <span class="inline-block px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded-lg border border-slate-200">
+                            총무인사팀
+                        </span>
+                    </td>
+                </tr><tr class="table-row group transition-all">
+                    <td class="px-6 py-5 text-center text-[10px] font-bold text-slate-300">#12</td>
+                    <td class="px-6 py-5">
+                        <div class="font-bold text-slate-800 text-sm">행정위원회</div>
+                        <div class="text-[10px] text-slate-400 mt-0.5 font-medium">정책기구</div>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(12, 'function')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 text-emerald-700 text-[11px] font-bold rounded-xl border border-emerald-100 hover:bg-emerald-600 hover:text-white">
+                            <i class="fas fa-tasks"></i> 기능 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(12, 'members')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-700 text-[11px] font-bold rounded-xl border border-blue-100 hover:bg-blue-600 hover:text-white">
+                            <i class="fas fa-users"></i> 명단 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-right">
+                        <span class="inline-block px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded-lg border border-slate-200">
+                            기획처
+                        </span>
+                    </td>
+                </tr><tr class="table-row group transition-all">
+                    <td class="px-6 py-5 text-center text-[10px] font-bold text-slate-300">#13</td>
+                    <td class="px-6 py-5">
+                        <div class="font-bold text-slate-800 text-sm">교수협의회</div>
+                        <div class="text-[10px] text-slate-400 mt-0.5 font-medium">총장행정자문기구</div>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(13, 'function')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 text-emerald-700 text-[11px] font-bold rounded-xl border border-emerald-100 hover:bg-emerald-600 hover:text-white">
+                            <i class="fas fa-tasks"></i> 기능 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(13, 'members')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-700 text-[11px] font-bold rounded-xl border border-blue-100 hover:bg-blue-600 hover:text-white">
+                            <i class="fas fa-users"></i> 명단 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-right">
+                        <span class="inline-block px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded-lg border border-slate-200">
+                            교무처
+                        </span>
+                    </td>
+                </tr><tr class="table-row group transition-all">
+                    <td class="px-6 py-5 text-center text-[10px] font-bold text-slate-300">#14</td>
+                    <td class="px-6 py-5">
+                        <div class="font-bold text-slate-800 text-sm">총장정책자문위원회</div>
+                        <div class="text-[10px] text-slate-400 mt-0.5 font-medium">총장행정자문기구</div>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(14, 'function')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 text-emerald-700 text-[11px] font-bold rounded-xl border border-emerald-100 hover:bg-emerald-600 hover:text-white">
+                            <i class="fas fa-tasks"></i> 기능 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(14, 'members')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-700 text-[11px] font-bold rounded-xl border border-blue-100 hover:bg-blue-600 hover:text-white">
+                            <i class="fas fa-users"></i> 명단 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-right">
+                        <span class="inline-block px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded-lg border border-slate-200">
+                            부속실
+                        </span>
+                    </td>
+                </tr><tr class="table-row group transition-all">
+                    <td class="px-6 py-5 text-center text-[10px] font-bold text-slate-300">#15</td>
+                    <td class="px-6 py-5">
+                        <div class="font-bold text-slate-800 text-sm">AI융합교육원 운영위원회</div>
+                        <div class="text-[10px] text-slate-400 mt-0.5 font-medium">총장직속기구</div>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(15, 'function')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 text-emerald-700 text-[11px] font-bold rounded-xl border border-emerald-100 hover:bg-emerald-600 hover:text-white">
+                            <i class="fas fa-tasks"></i> 기능 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(15, 'members')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-700 text-[11px] font-bold rounded-xl border border-blue-100 hover:bg-blue-600 hover:text-white">
+                            <i class="fas fa-users"></i> 명단 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-right">
+                        <span class="inline-block px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded-lg border border-slate-200">
+                            AI융합교육원
+                        </span>
+                    </td>
+                </tr><tr class="table-row group transition-all">
+                    <td class="px-6 py-5 text-center text-[10px] font-bold text-slate-300">#16</td>
+                    <td class="px-6 py-5">
+                        <div class="font-bold text-slate-800 text-sm">RISE사업 운영위원회</div>
+                        <div class="text-[10px] text-slate-400 mt-0.5 font-medium">총장직속기구</div>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(16, 'function')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 text-emerald-700 text-[11px] font-bold rounded-xl border border-emerald-100 hover:bg-emerald-600 hover:text-white">
+                            <i class="fas fa-tasks"></i> 기능 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(16, 'members')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-700 text-[11px] font-bold rounded-xl border border-blue-100 hover:bg-blue-600 hover:text-white">
+                            <i class="fas fa-users"></i> 명단 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-right">
+                        <span class="inline-block px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded-lg border border-slate-200">
+                            산학협력단
+                        </span>
+                    </td>
+                </tr><tr class="table-row group transition-all">
+                    <td class="px-6 py-5 text-center text-[10px] font-bold text-slate-300">#17</td>
+                    <td class="px-6 py-5">
+                        <div class="font-bold text-slate-800 text-sm">SU인권센터 심의위원회</div>
+                        <div class="text-[10px] text-slate-400 mt-0.5 font-medium">총장직속기구</div>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(17, 'function')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 text-emerald-700 text-[11px] font-bold rounded-xl border border-emerald-100 hover:bg-emerald-600 hover:text-white">
+                            <i class="fas fa-tasks"></i> 기능 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(17, 'members')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-700 text-[11px] font-bold rounded-xl border border-blue-100 hover:bg-blue-600 hover:text-white">
+                            <i class="fas fa-users"></i> 명단 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-right">
+                        <span class="inline-block px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded-lg border border-slate-200">
+                            SU인권센터
+                        </span>
+                    </td>
+                </tr><tr class="table-row group transition-all">
+                    <td class="px-6 py-5 text-center text-[10px] font-bold text-slate-300">#19</td>
+                    <td class="px-6 py-5">
+                        <div class="font-bold text-slate-800 text-sm">감사심의위원회</div>
+                        <div class="text-[10px] text-slate-400 mt-0.5 font-medium">총장직속기구</div>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(19, 'function')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 text-emerald-700 text-[11px] font-bold rounded-xl border border-emerald-100 hover:bg-emerald-600 hover:text-white">
+                            <i class="fas fa-tasks"></i> 기능 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(19, 'members')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-700 text-[11px] font-bold rounded-xl border border-blue-100 hover:bg-blue-600 hover:text-white">
+                            <i class="fas fa-users"></i> 명단 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-right">
+                        <span class="inline-block px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded-lg border border-slate-200">
+                            내부감사실
+                        </span>
+                    </td>
+                </tr><tr class="table-row group transition-all">
+                    <td class="px-6 py-5 text-center text-[10px] font-bold text-slate-300">#21</td>
+                    <td class="px-6 py-5">
+                        <div class="font-bold text-slate-800 text-sm">교수학습개발센터 운영위원회</div>
+                        <div class="text-[10px] text-slate-400 mt-0.5 font-medium">총장직속기구</div>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(21, 'function')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 text-emerald-700 text-[11px] font-bold rounded-xl border border-emerald-100 hover:bg-emerald-600 hover:text-white">
+                            <i class="fas fa-tasks"></i> 기능 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(21, 'members')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-700 text-[11px] font-bold rounded-xl border border-blue-100 hover:bg-blue-600 hover:text-white">
+                            <i class="fas fa-users"></i> 명단 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-right">
+                        <span class="inline-block px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded-lg border border-slate-200">
+                            교육혁신원 교수학습개발센터
+                        </span>
+                    </td>
+                </tr><tr class="table-row group transition-all">
+                    <td class="px-6 py-5 text-center text-[10px] font-bold text-slate-300">#24</td>
+                    <td class="px-6 py-5">
+                        <div class="font-bold text-slate-800 text-sm">교육혁신원 운영위원회</div>
+                        <div class="text-[10px] text-slate-400 mt-0.5 font-medium">총장직속기구</div>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(24, 'function')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 text-emerald-700 text-[11px] font-bold rounded-xl border border-emerald-100 hover:bg-emerald-600 hover:text-white">
+                            <i class="fas fa-tasks"></i> 기능 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(24, 'members')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-700 text-[11px] font-bold rounded-xl border border-blue-100 hover:bg-blue-600 hover:text-white">
+                            <i class="fas fa-users"></i> 명단 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-right">
+                        <span class="inline-block px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded-lg border border-slate-200">
+                            교육혁신원
+                        </span>
+                    </td>
+                </tr><tr class="table-row group transition-all">
+                    <td class="px-6 py-5 text-center text-[10px] font-bold text-slate-300">#30</td>
+                    <td class="px-6 py-5">
+                        <div class="font-bold text-slate-800 text-sm">산학협력단 운영위원회</div>
+                        <div class="text-[10px] text-slate-400 mt-0.5 font-medium">총장직속기구</div>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(30, 'function')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 text-emerald-700 text-[11px] font-bold rounded-xl border border-emerald-100 hover:bg-emerald-600 hover:text-white">
+                            <i class="fas fa-tasks"></i> 기능 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(30, 'members')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-700 text-[11px] font-bold rounded-xl border border-blue-100 hover:bg-blue-600 hover:text-white">
+                            <i class="fas fa-users"></i> 명단 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-right">
+                        <span class="inline-block px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded-lg border border-slate-200">
+                            산학협력단
+                        </span>
+                    </td>
+                </tr><tr class="table-row group transition-all">
+                    <td class="px-6 py-5 text-center text-[10px] font-bold text-slate-300">#32</td>
+                    <td class="px-6 py-5">
+                        <div class="font-bold text-slate-800 text-sm">생명윤리위원회</div>
+                        <div class="text-[10px] text-slate-400 mt-0.5 font-medium">총장직속기구</div>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(32, 'function')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 text-emerald-700 text-[11px] font-bold rounded-xl border border-emerald-100 hover:bg-emerald-600 hover:text-white">
+                            <i class="fas fa-tasks"></i> 기능 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(32, 'members')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-700 text-[11px] font-bold rounded-xl border border-blue-100 hover:bg-blue-600 hover:text-white">
+                            <i class="fas fa-users"></i> 명단 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-right">
+                        <span class="inline-block px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded-lg border border-slate-200">
+                            연구처
+                        </span>
+                    </td>
+                </tr><tr class="table-row group transition-all">
+                    <td class="px-6 py-5 text-center text-[10px] font-bold text-slate-300">#33</td>
+                    <td class="px-6 py-5">
+                        <div class="font-bold text-slate-800 text-sm">성희롱·성폭력 고충심의위원회</div>
+                        <div class="text-[10px] text-slate-400 mt-0.5 font-medium">총장직속기구</div>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(33, 'function')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 text-emerald-700 text-[11px] font-bold rounded-xl border border-emerald-100 hover:bg-emerald-600 hover:text-white">
+                            <i class="fas fa-tasks"></i> 기능 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(33, 'members')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-700 text-[11px] font-bold rounded-xl border border-blue-100 hover:bg-blue-600 hover:text-white">
+                            <i class="fas fa-users"></i> 명단 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-right">
+                        <span class="inline-block px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded-lg border border-slate-200">
+                            SU인권센터 양성평등팀
+                        </span>
+                    </td>
+                </tr><tr class="table-row group transition-all">
+                    <td class="px-6 py-5 text-center text-[10px] font-bold text-slate-300">#37</td>
+                    <td class="px-6 py-5">
+                        <div class="font-bold text-slate-800 text-sm">정보전산 운영위원회</div>
+                        <div class="text-[10px] text-slate-400 mt-0.5 font-medium">총장직속기구</div>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(37, 'function')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 text-emerald-700 text-[11px] font-bold rounded-xl border border-emerald-100 hover:bg-emerald-600 hover:text-white">
+                            <i class="fas fa-tasks"></i> 기능 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(37, 'members')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-700 text-[11px] font-bold rounded-xl border border-blue-100 hover:bg-blue-600 hover:text-white">
+                            <i class="fas fa-users"></i> 명단 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-right">
+                        <span class="inline-block px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded-lg border border-slate-200">
+                            학술정보원 정보전산팀
+                        </span>
+                    </td>
+                </tr><tr class="table-row group transition-all">
+                    <td class="px-6 py-5 text-center text-[10px] font-bold text-slate-300">#45</td>
+                    <td class="px-6 py-5">
+                        <div class="font-bold text-slate-800 text-sm">학술정보 운영위원회</div>
+                        <div class="text-[10px] text-slate-400 mt-0.5 font-medium">총장직속기구</div>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(45, 'function')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 text-emerald-700 text-[11px] font-bold rounded-xl border border-emerald-100 hover:bg-emerald-600 hover:text-white">
+                            <i class="fas fa-tasks"></i> 기능 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(45, 'members')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-700 text-[11px] font-bold rounded-xl border border-blue-100 hover:bg-blue-600 hover:text-white">
+                            <i class="fas fa-users"></i> 명단 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-right">
+                        <span class="inline-block px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded-lg border border-slate-200">
+                            학술정보원 학술정보팀
+                        </span>
+                    </td>
+                </tr><tr class="table-row group transition-all">
+                    <td class="px-6 py-5 text-center text-[10px] font-bold text-slate-300">#47</td>
+                    <td class="px-6 py-5">
+                        <div class="font-bold text-slate-800 text-sm">BFFL추진위원회 (실무)</div>
+                        <div class="text-[10px] text-slate-400 mt-0.5 font-medium">교목처 자문기구</div>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(47, 'function')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 text-emerald-700 text-[11px] font-bold rounded-xl border border-emerald-100 hover:bg-emerald-600 hover:text-white">
+                            <i class="fas fa-tasks"></i> 기능 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(47, 'members')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-700 text-[11px] font-bold rounded-xl border border-blue-100 hover:bg-blue-600 hover:text-white">
+                            <i class="fas fa-users"></i> 명단 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-right">
+                        <span class="inline-block px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded-lg border border-slate-200">
+                            교목처
+                        </span>
+                    </td>
+                </tr><tr class="table-row group transition-all">
+                    <td class="px-6 py-5 text-center text-[10px] font-bold text-slate-300">#49</td>
+                    <td class="px-6 py-5">
+                        <div class="font-bold text-slate-800 text-sm">교목위원회</div>
+                        <div class="text-[10px] text-slate-400 mt-0.5 font-medium">교목처 자문기구</div>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(49, 'function')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 text-emerald-700 text-[11px] font-bold rounded-xl border border-emerald-100 hover:bg-emerald-600 hover:text-white">
+                            <i class="fas fa-tasks"></i> 기능 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(49, 'members')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-700 text-[11px] font-bold rounded-xl border border-blue-100 hover:bg-blue-600 hover:text-white">
+                            <i class="fas fa-users"></i> 명단 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-right">
+                        <span class="inline-block px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded-lg border border-slate-200">
+                            교목처
+                        </span>
+                    </td>
+                </tr><tr class="table-row group transition-all">
+                    <td class="px-6 py-5 text-center text-[10px] font-bold text-slate-300">#53</td>
+                    <td class="px-6 py-5">
+                        <div class="font-bold text-slate-800 text-sm">채플위원회</div>
+                        <div class="text-[10px] text-slate-400 mt-0.5 font-medium">교목처 자문기구</div>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(53, 'function')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 text-emerald-700 text-[11px] font-bold rounded-xl border border-emerald-100 hover:bg-emerald-600 hover:text-white">
+                            <i class="fas fa-tasks"></i> 기능 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(53, 'members')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-700 text-[11px] font-bold rounded-xl border border-blue-100 hover:bg-blue-600 hover:text-white">
+                            <i class="fas fa-users"></i> 명단 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-right">
+                        <span class="inline-block px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded-lg border border-slate-200">
+                            교목처
+                        </span>
+                    </td>
+                </tr><tr class="table-row group transition-all">
+                    <td class="px-6 py-5 text-center text-[10px] font-bold text-slate-300">#57</td>
+                    <td class="px-6 py-5">
+                        <div class="font-bold text-slate-800 text-sm">AI 대학혁신센터 운영위원회</div>
+                        <div class="text-[10px] text-slate-400 mt-0.5 font-medium">기획정책자문기구</div>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(57, 'function')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 text-emerald-700 text-[11px] font-bold rounded-xl border border-emerald-100 hover:bg-emerald-600 hover:text-white">
+                            <i class="fas fa-tasks"></i> 기능 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(57, 'members')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-700 text-[11px] font-bold rounded-xl border border-blue-100 hover:bg-blue-600 hover:text-white">
+                            <i class="fas fa-users"></i> 명단 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-right">
+                        <span class="inline-block px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded-lg border border-slate-200">
+                            기획처 AI대학혁신센터
+                        </span>
+                    </td>
+                </tr><tr class="table-row group transition-all">
+                    <td class="px-6 py-5 text-center text-[10px] font-bold text-slate-300">#58</td>
+                    <td class="px-6 py-5">
+                        <div class="font-bold text-slate-800 text-sm">IR센터 운영위원회</div>
+                        <div class="text-[10px] text-slate-400 mt-0.5 font-medium">기획정책자문기구</div>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(58, 'function')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 text-emerald-700 text-[11px] font-bold rounded-xl border border-emerald-100 hover:bg-emerald-600 hover:text-white">
+                            <i class="fas fa-tasks"></i> 기능 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(58, 'members')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-700 text-[11px] font-bold rounded-xl border border-blue-100 hover:bg-blue-600 hover:text-white">
+                            <i class="fas fa-users"></i> 명단 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-right">
+                        <span class="inline-block px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded-lg border border-slate-200">
+                            기획처 IR센터
+                        </span>
+                    </td>
+                </tr><tr class="table-row group transition-all">
+                    <td class="px-6 py-5 text-center text-[10px] font-bold text-slate-300">#60</td>
+                    <td class="px-6 py-5">
+                        <div class="font-bold text-slate-800 text-sm">규정심의위원회</div>
+                        <div class="text-[10px] text-slate-400 mt-0.5 font-medium">기획정책자문기구</div>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(60, 'function')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 text-emerald-700 text-[11px] font-bold rounded-xl border border-emerald-100 hover:bg-emerald-600 hover:text-white">
+                            <i class="fas fa-tasks"></i> 기능 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(60, 'members')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-700 text-[11px] font-bold rounded-xl border border-blue-100 hover:bg-blue-600 hover:text-white">
+                            <i class="fas fa-users"></i> 명단 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-right">
+                        <span class="inline-block px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded-lg border border-slate-200">
+                            기획처
+                        </span>
+                    </td>
+                </tr><tr class="table-row group transition-all">
+                    <td class="px-6 py-5 text-center text-[10px] font-bold text-slate-300">#63</td>
+                    <td class="px-6 py-5">
+                        <div class="font-bold text-slate-800 text-sm">등록금심의위원회</div>
+                        <div class="text-[10px] text-slate-400 mt-0.5 font-medium">기획정책자문기구</div>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(63, 'function')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 text-emerald-700 text-[11px] font-bold rounded-xl border border-emerald-100 hover:bg-emerald-600 hover:text-white">
+                            <i class="fas fa-tasks"></i> 기능 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(63, 'members')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-700 text-[11px] font-bold rounded-xl border border-blue-100 hover:bg-blue-600 hover:text-white">
+                            <i class="fas fa-users"></i> 명단 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-right">
+                        <span class="inline-block px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded-lg border border-slate-200">
+                            기획처
+                        </span>
+                    </td>
+                </tr><tr class="table-row group transition-all">
+                    <td class="px-6 py-5 text-center text-[10px] font-bold text-slate-300">#66</td>
+                    <td class="px-6 py-5">
+                        <div class="font-bold text-slate-800 text-sm">발전전략위원회</div>
+                        <div class="text-[10px] text-slate-400 mt-0.5 font-medium">기획정책자문기구</div>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(66, 'function')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 text-emerald-700 text-[11px] font-bold rounded-xl border border-emerald-100 hover:bg-emerald-600 hover:text-white">
+                            <i class="fas fa-tasks"></i> 기능 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(66, 'members')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-700 text-[11px] font-bold rounded-xl border border-blue-100 hover:bg-blue-600 hover:text-white">
+                            <i class="fas fa-users"></i> 명단 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-right">
+                        <span class="inline-block px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded-lg border border-slate-200">
+                            기획처
+                        </span>
+                    </td>
+                </tr><tr class="table-row group transition-all">
+                    <td class="px-6 py-5 text-center text-[10px] font-bold text-slate-300">#69</td>
+                    <td class="px-6 py-5">
+                        <div class="font-bold text-slate-800 text-sm">예산위원회</div>
+                        <div class="text-[10px] text-slate-400 mt-0.5 font-medium">기획정책자문기구</div>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(69, 'function')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 text-emerald-700 text-[11px] font-bold rounded-xl border border-emerald-100 hover:bg-emerald-600 hover:text-white">
+                            <i class="fas fa-tasks"></i> 기능 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(69, 'members')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-700 text-[11px] font-bold rounded-xl border border-blue-100 hover:bg-blue-600 hover:text-white">
+                            <i class="fas fa-users"></i> 명단 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-right">
+                        <span class="inline-block px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded-lg border border-slate-200">
+                            기획처
+                        </span>
+                    </td>
+                </tr><tr class="table-row group transition-all">
+                    <td class="px-6 py-5 text-center text-[10px] font-bold text-slate-300">#71</td>
+                    <td class="px-6 py-5">
+                        <div class="font-bold text-slate-800 text-sm">학과구조개선위원회</div>
+                        <div class="text-[10px] text-slate-400 mt-0.5 font-medium">기획정책자문기구</div>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(71, 'function')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 text-emerald-700 text-[11px] font-bold rounded-xl border border-emerald-100 hover:bg-emerald-600 hover:text-white">
+                            <i class="fas fa-tasks"></i> 기능 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(71, 'members')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-700 text-[11px] font-bold rounded-xl border border-blue-100 hover:bg-blue-600 hover:text-white">
+                            <i class="fas fa-users"></i> 명단 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-right">
+                        <span class="inline-block px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded-lg border border-slate-200">
+                            기획처
+                        </span>
+                    </td>
+                </tr><tr class="table-row group transition-all">
+                    <td class="px-6 py-5 text-center text-[10px] font-bold text-slate-300">#74</td>
+                    <td class="px-6 py-5">
+                        <div class="font-bold text-slate-800 text-sm">공통기기실조정위원회</div>
+                        <div class="text-[10px] text-slate-400 mt-0.5 font-medium">교무행정자문기구</div>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(74, 'function')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 text-emerald-700 text-[11px] font-bold rounded-xl border border-emerald-100 hover:bg-emerald-600 hover:text-white">
+                            <i class="fas fa-tasks"></i> 기능 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(74, 'members')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-700 text-[11px] font-bold rounded-xl border border-blue-100 hover:bg-blue-600 hover:text-white">
+                            <i class="fas fa-users"></i> 명단 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-right">
+                        <span class="inline-block px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded-lg border border-slate-200">
+                            공통기기실
+                        </span>
+                    </td>
+                </tr><tr class="table-row group transition-all">
+                    <td class="px-6 py-5 text-center text-[10px] font-bold text-slate-300">#77</td>
+                    <td class="px-6 py-5">
+                        <div class="font-bold text-slate-800 text-sm">교원인사위원회</div>
+                        <div class="text-[10px] text-slate-400 mt-0.5 font-medium">교무행정자문기구</div>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(77, 'function')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 text-emerald-700 text-[11px] font-bold rounded-xl border border-emerald-100 hover:bg-emerald-600 hover:text-white">
+                            <i class="fas fa-tasks"></i> 기능 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(77, 'members')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-700 text-[11px] font-bold rounded-xl border border-blue-100 hover:bg-blue-600 hover:text-white">
+                            <i class="fas fa-users"></i> 명단 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-right">
+                        <span class="inline-block px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded-lg border border-slate-200">
+                            교무처
+                        </span>
+                    </td>
+                </tr><tr class="table-row group transition-all">
+                    <td class="px-6 py-5 text-center text-[10px] font-bold text-slate-300">#78</td>
+                    <td class="px-6 py-5">
+                        <div class="font-bold text-slate-800 text-sm">교육과정운영위원회</div>
+                        <div class="text-[10px] text-slate-400 mt-0.5 font-medium">교무행정자문기구</div>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(78, 'function')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 text-emerald-700 text-[11px] font-bold rounded-xl border border-emerald-100 hover:bg-emerald-600 hover:text-white">
+                            <i class="fas fa-tasks"></i> 기능 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(78, 'members')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-700 text-[11px] font-bold rounded-xl border border-blue-100 hover:bg-blue-600 hover:text-white">
+                            <i class="fas fa-users"></i> 명단 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-right">
+                        <span class="inline-block px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded-lg border border-slate-200">
+                            교무처
+                        </span>
+                    </td>
+                </tr><tr class="table-row group transition-all">
+                    <td class="px-6 py-5 text-center text-[10px] font-bold text-slate-300">#83</td>
+                    <td class="px-6 py-5">
+                        <div class="font-bold text-slate-800 text-sm">학위검증위원회</div>
+                        <div class="text-[10px] text-slate-400 mt-0.5 font-medium">교무행정자문기구</div>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(83, 'function')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 text-emerald-700 text-[11px] font-bold rounded-xl border border-emerald-100 hover:bg-emerald-600 hover:text-white">
+                            <i class="fas fa-tasks"></i> 기능 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(83, 'members')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-700 text-[11px] font-bold rounded-xl border border-blue-100 hover:bg-blue-600 hover:text-white">
+                            <i class="fas fa-users"></i> 명단 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-right">
+                        <span class="inline-block px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded-lg border border-slate-200">
+                            교무처
+                        </span>
+                    </td>
+                </tr><tr class="table-row group transition-all">
+                    <td class="px-6 py-5 text-center text-[10px] font-bold text-slate-300">#84</td>
+                    <td class="px-6 py-5">
+                        <div class="font-bold text-slate-800 text-sm">대학입학전형 공정관리위원회</div>
+                        <div class="text-[10px] text-slate-400 mt-0.5 font-medium">입시행정자문기구</div>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(84, 'function')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 text-emerald-700 text-[11px] font-bold rounded-xl border border-emerald-100 hover:bg-emerald-600 hover:text-white">
+                            <i class="fas fa-tasks"></i> 기능 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(84, 'members')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-700 text-[11px] font-bold rounded-xl border border-blue-100 hover:bg-blue-600 hover:text-white">
+                            <i class="fas fa-users"></i> 명단 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-right">
+                        <span class="inline-block px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded-lg border border-slate-200">
+                            입학처
+                        </span>
+                    </td>
+                </tr><tr class="table-row group transition-all">
+                    <td class="px-6 py-5 text-center text-[10px] font-bold text-slate-300">#89</td>
+                    <td class="px-6 py-5">
+                        <div class="font-bold text-slate-800 text-sm">감염병관리위원회</div>
+                        <div class="text-[10px] text-slate-400 mt-0.5 font-medium">학생지원자문기구</div>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(89, 'function')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 text-emerald-700 text-[11px] font-bold rounded-xl border border-emerald-100 hover:bg-emerald-600 hover:text-white">
+                            <i class="fas fa-tasks"></i> 기능 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(89, 'members')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-700 text-[11px] font-bold rounded-xl border border-blue-100 hover:bg-blue-600 hover:text-white">
+                            <i class="fas fa-users"></i> 명단 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-right">
+                        <span class="inline-block px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded-lg border border-slate-200">
+                            건강증진센터
+                        </span>
+                    </td>
+                </tr><tr class="table-row group transition-all">
+                    <td class="px-6 py-5 text-center text-[10px] font-bold text-slate-300">#94</td>
+                    <td class="px-6 py-5">
+                        <div class="font-bold text-slate-800 text-sm">장학위원회</div>
+                        <div class="text-[10px] text-slate-400 mt-0.5 font-medium">학생지원자문기구</div>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(94, 'function')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 text-emerald-700 text-[11px] font-bold rounded-xl border border-emerald-100 hover:bg-emerald-600 hover:text-white">
+                            <i class="fas fa-tasks"></i> 기능 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(94, 'members')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-700 text-[11px] font-bold rounded-xl border border-blue-100 hover:bg-blue-600 hover:text-white">
+                            <i class="fas fa-users"></i> 명단 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-right">
+                        <span class="inline-block px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded-lg border border-slate-200">
+                            학생복지팀
+                        </span>
+                    </td>
+                </tr><tr class="table-row group transition-all">
+                    <td class="px-6 py-5 text-center text-[10px] font-bold text-slate-300">#100</td>
+                    <td class="px-6 py-5">
+                        <div class="font-bold text-slate-800 text-sm">개인정보보호 실무위원회</div>
+                        <div class="text-[10px] text-slate-400 mt-0.5 font-medium">사무행정자문기구</div>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(100, 'function')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 text-emerald-700 text-[11px] font-bold rounded-xl border border-emerald-100 hover:bg-emerald-600 hover:text-white">
+                            <i class="fas fa-tasks"></i> 기능 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(100, 'members')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-700 text-[11px] font-bold rounded-xl border border-blue-100 hover:bg-blue-600 hover:text-white">
+                            <i class="fas fa-users"></i> 명단 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-right">
+                        <span class="inline-block px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded-lg border border-slate-200">
+                            총무인사팀
+                        </span>
+                    </td>
+                </tr><tr class="table-row group transition-all">
+                    <td class="px-6 py-5 text-center text-[10px] font-bold text-slate-300">#106</td>
+                    <td class="px-6 py-5">
+                        <div class="font-bold text-slate-800 text-sm">기금운용심의회</div>
+                        <div class="text-[10px] text-slate-400 mt-0.5 font-medium">사무행정자문기구</div>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(106, 'function')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 text-emerald-700 text-[11px] font-bold rounded-xl border border-emerald-100 hover:bg-emerald-600 hover:text-white">
+                            <i class="fas fa-tasks"></i> 기능 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(106, 'members')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-700 text-[11px] font-bold rounded-xl border border-blue-100 hover:bg-blue-600 hover:text-white">
+                            <i class="fas fa-users"></i> 명단 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-right">
+                        <span class="inline-block px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded-lg border border-slate-200">
+                            재무처
+                        </span>
+                    </td>
+                </tr><tr class="table-row group transition-all">
+                    <td class="px-6 py-5 text-center text-[10px] font-bold text-slate-300">#116</td>
+                    <td class="px-6 py-5">
+                        <div class="font-bold text-slate-800 text-sm">직원인사위원회</div>
+                        <div class="text-[10px] text-slate-400 mt-0.5 font-medium">사무행정자문기구</div>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(116, 'function')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 text-emerald-700 text-[11px] font-bold rounded-xl border border-emerald-100 hover:bg-emerald-600 hover:text-white">
+                            <i class="fas fa-tasks"></i> 기능 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(116, 'members')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-700 text-[11px] font-bold rounded-xl border border-blue-100 hover:bg-blue-600 hover:text-white">
+                            <i class="fas fa-users"></i> 명단 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-right">
+                        <span class="inline-block px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded-lg border border-slate-200">
+                            총무인사팀
+                        </span>
+                    </td>
+                </tr><tr class="table-row group transition-all">
+                    <td class="px-6 py-5 text-center text-[10px] font-bold text-slate-300">#118</td>
+                    <td class="px-6 py-5">
+                        <div class="font-bold text-slate-800 text-sm">교수연구위원회</div>
+                        <div class="text-[10px] text-slate-400 mt-0.5 font-medium">연구산학행정자문기구</div>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(118, 'function')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 text-emerald-700 text-[11px] font-bold rounded-xl border border-emerald-100 hover:bg-emerald-600 hover:text-white">
+                            <i class="fas fa-tasks"></i> 기능 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(118, 'members')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-700 text-[11px] font-bold rounded-xl border border-blue-100 hover:bg-blue-600 hover:text-white">
+                            <i class="fas fa-users"></i> 명단 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-right">
+                        <span class="inline-block px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded-lg border border-slate-200">
+                            연구처
+                        </span>
+                    </td>
+                </tr><tr class="table-row group transition-all">
+                    <td class="px-6 py-5 text-center text-[10px] font-bold text-slate-300">#128</td>
+                    <td class="px-6 py-5">
+                        <div class="font-bold text-slate-800 text-sm">발전기금위원회</div>
+                        <div class="text-[10px] text-slate-400 mt-0.5 font-medium">대외협력자문기구</div>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(128, 'function')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 text-emerald-700 text-[11px] font-bold rounded-xl border border-emerald-100 hover:bg-emerald-600 hover:text-white">
+                            <i class="fas fa-tasks"></i> 기능 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(128, 'members')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-700 text-[11px] font-bold rounded-xl border border-blue-100 hover:bg-blue-600 hover:text-white">
+                            <i class="fas fa-users"></i> 명단 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-right">
+                        <span class="inline-block px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded-lg border border-slate-200">
+                            브랜드전략본부
+                        </span>
+                    </td>
+                </tr><tr class="table-row group transition-all">
+                    <td class="px-6 py-5 text-center text-[10px] font-bold text-slate-300">#136</td>
+                    <td class="px-6 py-5">
+                        <div class="font-bold text-slate-800 text-sm">교양교육운영위원회</div>
+                        <div class="text-[10px] text-slate-400 mt-0.5 font-medium">부속기관 및 기타 자문기구</div>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(136, 'function')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 text-emerald-700 text-[11px] font-bold rounded-xl border border-emerald-100 hover:bg-emerald-600 hover:text-white">
+                            <i class="fas fa-tasks"></i> 기능 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(136, 'members')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-700 text-[11px] font-bold rounded-xl border border-blue-100 hover:bg-blue-600 hover:text-white">
+                            <i class="fas fa-users"></i> 명단 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-right">
+                        <span class="inline-block px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded-lg border border-slate-200">
+                            교양교육원
+                        </span>
+                    </td>
+                </tr><tr class="table-row group transition-all">
+                    <td class="px-6 py-5 text-center text-[10px] font-bold text-slate-300">#141</td>
+                    <td class="px-6 py-5">
+                        <div class="font-bold text-slate-800 text-sm">생활교육원운영위원회</div>
+                        <div class="text-[10px] text-slate-400 mt-0.5 font-medium">부속기관 및 기타 자문기구</div>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(141, 'function')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 text-emerald-700 text-[11px] font-bold rounded-xl border border-emerald-100 hover:bg-emerald-600 hover:text-white">
+                            <i class="fas fa-tasks"></i> 기능 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(141, 'members')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-700 text-[11px] font-bold rounded-xl border border-blue-100 hover:bg-blue-600 hover:text-white">
+                            <i class="fas fa-users"></i> 명단 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-right">
+                        <span class="inline-block px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded-lg border border-slate-200">
+                            생활교육원
+                        </span>
+                    </td>
+                </tr><tr class="table-row group transition-all">
+                    <td class="px-6 py-5 text-center text-[10px] font-bold text-slate-300">#148</td>
+                    <td class="px-6 py-5">
+                        <div class="font-bold text-slate-800 text-sm">대학원위원회</div>
+                        <div class="text-[10px] text-slate-400 mt-0.5 font-medium">대학원자문기구</div>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(148, 'function')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 text-emerald-700 text-[11px] font-bold rounded-xl border border-emerald-100 hover:bg-emerald-600 hover:text-white">
+                            <i class="fas fa-tasks"></i> 기능 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(148, 'members')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-700 text-[11px] font-bold rounded-xl border border-blue-100 hover:bg-blue-600 hover:text-white">
+                            <i class="fas fa-users"></i> 명단 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-right">
+                        <span class="inline-block px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded-lg border border-slate-200">
+                            대학원
+                        </span>
+                    </td>
+                </tr><tr class="table-row group transition-all">
+                    <td class="px-6 py-5 text-center text-[10px] font-bold text-slate-300">#151</td>
+                    <td class="px-6 py-5">
+                        <div class="font-bold text-slate-800 text-sm">입시공정관리위원회</div>
+                        <div class="text-[10px] text-slate-400 mt-0.5 font-medium">대학원자문기구</div>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(151, 'function')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 text-emerald-700 text-[11px] font-bold rounded-xl border border-emerald-100 hover:bg-emerald-600 hover:text-white">
+                            <i class="fas fa-tasks"></i> 기능 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(151, 'members')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-700 text-[11px] font-bold rounded-xl border border-blue-100 hover:bg-blue-600 hover:text-white">
+                            <i class="fas fa-users"></i> 명단 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-right">
+                        <span class="inline-block px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded-lg border border-slate-200">
+                            대학원
+                        </span>
+                    </td>
+                </tr></tbody>
+                    </table>
+                    <div id="emptyState" class="hidden py-32 text-center">
+                        <i class="fas fa-search text-4xl text-slate-200 mb-4"></i>
+                        <p class="text-slate-400 font-medium">검색 결과가 없습니다.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 모달 -->
+    <div id="detailModal" class="fixed inset-0 z-[100] flex items-center justify-center hidden p-4">
+        <div class="absolute inset-0 modal-backdrop" onclick="closeModal()"></div>
+        <div class="relative bg-white w-full max-w-2xl rounded-3xl shadow-2xl overflow-hidden transform transition-all border border-slate-200">
+            <div id="modalHeader" class="p-6 text-white relative">
+                <button onclick="closeModal()" class="absolute top-5 right-5 w-8 h-8 rounded-full bg-black/10 flex items-center justify-center hover:bg-black/20 transition-all">
+                    <i class="fas fa-times"></i>
+                </button>
+                <div class="pr-10">
+                    <span id="modalBadge" class="text-[9px] font-bold uppercase tracking-widest bg-white/20 px-2 py-0.5 rounded-full mb-2 inline-block">정보 조회</span>
+                    <h3 id="modalTitle" class="text-xl font-bold">위원회 명칭</h3>
+                    <p id="modalSub" class="text-xs opacity-70 mt-1">상위기구 | 부서</p>
+                </div>
+            </div>
+            
+            <div class="p-8 max-h-[60vh] overflow-y-auto custom-scrollbar">
+                <!-- 기능 콘텐츠 -->
+                <div id="functionContent" class="hidden">
+                    <div class="flex items-center gap-2 mb-4 text-[#004a26]">
+                        <i class="fas fa-thumbtack"></i>
+                        <h4 class="font-bold text-sm">주요 기능 및 심의 사항</h4>
+                    </div>
+                    <div id="funcText" class="text-slate-600 leading-relaxed text-sm whitespace-pre-line bg-slate-50 p-5 rounded-2xl border border-slate-100"></div>
+                </div>
+
+                <!-- 명단 콘텐츠 -->
+                <div id="membersContent" class="hidden space-y-6">
+                    <div>
+                        <div class="flex items-center gap-2 mb-3 text-blue-600">
+                            <i class="fas fa-user-shield"></i>
+                            <h4 class="font-bold text-sm">당연직 구성</h4>
+                        </div>
+                        <div id="exText" class="text-slate-600 text-sm leading-relaxed bg-blue-50/50 p-4 rounded-xl border border-blue-100"></div>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2 mb-3 text-emerald-600">
+                            <i class="fas fa-user-plus"></i>
+                            <h4 class="font-bold text-sm">임명직 명단</h4>
+                        </div>
+                        <div id="appText" class="text-slate-600 text-sm leading-relaxed bg-emerald-50/50 p-4 rounded-xl border border-emerald-100"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="px-8 py-4 bg-slate-50 border-t border-slate-100 flex justify-end">
+                <button onclick="closeModal()" class="px-6 py-2 bg-slate-800 text-white rounded-xl font-bold text-xs hover:bg-black transition-all">닫기</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 업로드된 텍스트 파일을 분석하여 구축한 151개 전체 데이터셋
+        const committeeData = [
+            // 1~12: 정책기구
+            { id: 1, category: "정책기구", name: "ESG위원회", dept: "기획처", function: "● ESG 경영을 위한 기본 정책 및 전략 등의 수립\n● 지속가능한 경영환경 조성 및 리스크 관리\n● 사회적 책임 및 공헌활동의 성과 모니터링\n● ESG관련 주요 업무에 대한 검토, 조정, 협의 및 심의\n● 총장이 부의하는 ESG경영에 관한 주요사항", exOfficio: "총장(위원장), 기획처장(서기), 부총장, 각 처장, 총장특보, 각 단과대학장, 각 대학원장, 대학혁신지원사업단장, S/W융합교육원장, 교양교육원장, 대학일자리본부장, 총학생회장", appointed: "-" },
+            { id: 2, category: "정책기구", name: "교무위원회", dept: "교무처", function: "● 대학(원), 학과, 부속기관, 부설연구소의 설치와 폐지에 관한 사항\n● 학사 관련 규정의 제정과 개폐에 관한 사항\n● 입학, 수료, 졸업에 관한 사항\n● 교수의 교무에 관한 사항", exOfficio: "총장(위원장), 교무처장(서기), 부총장, 각 처장, 총장특보, 각 단과대학장, 각 대학원장, 교양교육원장, 교육혁신원장, 국제교육원장, 생활교육원장, 학술정보원장, AI융합교육원장", appointed: "-" },
+            { id: 3, category: "정책기구", name: "교수회", dept: "교무처", function: "● 중대한 학칙 신설/변경\n● 중대한 정책 신설/변경\n● 기타 학교 운영에 관한 중대한 사항들", exOfficio: "총장(의장), 교무처장(서기), 교수 전원(조교수 이상)", appointed: "-" },
+            { id: 4, category: "정책기구", name: "교육이념구현위원회", dept: "교목처", function: "● 이념구현을 위한 규정에 관한 사항\n● 학생 신앙지도에 관한 정책 사항\n● 교직원 신앙프로그램에 관한 사항", exOfficio: "총장(위원장), 교목처장(서기), 부총장, 각처장, 각 단과대학장, 신학대학원장, 학술정보원장, 글로컬사회혁신원장, 교육혁신원장, 생활교육원장, 교양교육원장", appointed: "-" },
+            { id: 5, category: "정책기구", name: "대학건축위원회", dept: "건축안전관리팀", function: "● 교사 신축에 관한 사항\n● 교사 증(개)축에 관한 사항\n● 부동산 개발에 관한 사항", exOfficio: "총장(의장), 사무처장(서기), 부총장, 각 처장, 건축학과장, 건축학과교수(1), 장애학생지원센터장, 사무부처장, 건축안전관리팀장, 예산팀장, 재무팀장", appointed: "사광균(건축학과장), 권혜주(교수)" },
+            { id: 6, category: "정책기구", name: "대학평의원회", dept: "기획처", function: "● 대학의 발전계획에 관한 사항\n● 학칙의 제정 또는 개정에 관한 사항\n● 대학 헌장의 제정 또는 개정에 관한 사항\n● 대학교육과정의 운영에 관한 사항\n● 대학의 예산 및 결산에 관한 사항\n● 개방이사추천위원회 위원 추천에 관한 사항", exOfficio: "교수대표(5), 직원대표(3), 조교대표(1), 동문대표(1), 학생대표(2), 외부인사(1)", appointed: "이건호, 이규일, 이용우, 임태종, 정구철, 정지현, 신재현, 김기석, 오덕신, 류재권, 박재영, 김유현, 신동석" },
+            { id: 7, category: "정책기구", name: "대학혁신위원회", dept: "기획처", function: "● 재정지원사업 운영의 총괄적 점검\n● 자율혁신계획 상 특성화 방향에 기반한 투자 계획수립\n● 대학 내 재정지원사업의 성과에 대한 총괄적 평가·환류\n● 발전계획 및 특성화 계획에 관한 사항", exOfficio: "총장(위원장), 기획처장(서기), 부총장, 각 처장, 총장특보, 각 단과대학장, 각 대학원장, 대학원장, 대학혁신지원사업단장, AI융합교육원장, 교양교육원장, 대학일자리본부장, 총학생회장", appointed: "-" },
+            { id: 8, category: "정책기구", name: "비상대책위원회", dept: "건축안전관리팀", function: "● 대학 차원의 주요 문제발생 시 긴급조치를 필요로 하는 사항에 대한 협의 및 조치", exOfficio: "총장(위원장), 부총장(서기), 국제처장, 재무처장, 총장특보, 해당처장", appointed: "-" },
+            { id: 9, category: "정책기구", name: "위기관리위원회", dept: "건축안전관리팀", function: "● 대학 차원의 주요 문제발생 시 긴급조치를 필요로 하는 사항에 대한 협의 및 조치", exOfficio: "총장(위원장), 부총장(서기), 각 처장, 총장특보", appointed: "-" },
+            { id: 10, category: "정책기구", name: "전인교육위원회", dept: "교목처", function: "● 전인교육을 위한 정책 수립 및 운영 방안 입안", exOfficio: "교목처장(위원장), 글로컬사회혁신원장(서기), 부총장, 각 처장, 총장특보, 교수(2)", appointed: "김정미(교수), 김성완(교수)" },
+            { id: 11, category: "정책기구", name: "직원회", dept: "총무인사팀", function: "● 직원에 관한 주요 행정 사안들\n● 대학 운영에 있어서의 직원들의 역할에 관한 주요 사항들", exOfficio: "총장(의장), 사무처장(서기), 직원 전원(정규직)", appointed: "-" },
+            { id: 12, category: "정책기구", name: "행정위원회", dept: "기획처", function: "● 학교시설 및 장비구입, 예산편성 및 결산 사항\n● 수당, 급여규정, 행사, 규정승인 등 학교행정 제반사항\n● 행정 조직 변경이나 신설, 부서/학과 운영 사항\n● 위원회 신설/폐지 및 500만원 이상의 재정 안건", exOfficio: "총장(의장), 기획처장(서기), 부총장, 각 처장, 총장특보, 단과대학장 등", appointed: "한숙정(교수), 박일호(단과대학장), 윤진한(직원)" },
+
+            // 13~14: 총장행정자문기구
+            { id: 13, category: "총장행정자문기구", name: "교수협의회", dept: "교무처", function: "● 학기 초와 학기 말 정기 모임 및 임시모임\n● 총장 장학방침 발표\n● 각 부처 계획 발표 및 보고\n● 기타 의견 수렴 및 토의", exOfficio: "총장(의장), 교무처장(서기), 교수 전원(조교수 이상), 초청위원(재무처장, 내부감사)", appointed: "-" },
+            { id: 14, category: "총장행정자문기구", name: "총장정책자문위원회", dept: "부속실", function: "● 대학 정책에 관한 포괄적인 건의 및 총장 정책 자문", exOfficio: "총장(위원장), 부총장(서기), 초청위원(8명 내외)", appointed: "강진양, 남대극, 남상숙, 변윤식, 신용호, 양재욱, 오복자, 유제성, 이충재, 홍명관, 정창덕" },
+
+            // 15~46: 총장직속기구
+            { id: 15, category: "총장직속기구", name: "AI융합교육원 운영위원회", dept: "AI융합교육원", function: "● 사업운영 관련 규정 제·개정\n● 사업운영 계획 수립·추진 및 성과 평가", exOfficio: "총장(위원장), AI융합교육원장(서기), 부총장, 각 처장 등", appointed: "남현우(외부)" },
+            { id: 16, category: "총장직속기구", name: "RISE사업 운영위원회", dept: "산학협력단", function: "● RISE사업 운영계획 수립 및 예산 편성/변경", exOfficio: "사업단장(위원장), RISE사업단 팀장(서기), 부총장, 처장단 등", appointed: "필요시 위촉" },
+            { id: 17, category: "총장직속기구", name: "SU인권센터 심의위원회", dept: "SU인권센터", function: "● 신고된 사건의 인권침해 해당 여부 심의/의결\n● 시정조치 및 징계 권고", exOfficio: "부총장(위원장), 교무처장, 학생처장, 사무처장, 관련 전문가 등", appointed: "안재순, 이성영, 학생대표 등" },
+            { id: 19, category: "총장직속기구", name: "감사심의위원회", dept: "내부감사실", function: "● 감사보고서 및 감사처분 요구안 심의\n● 감사처분 이의신청 심의", exOfficio: "부총장(위원장), 내부감사(서기), 교무처장, 기획처장 등", appointed: "손애리, 정수목" },
+            { id: 21, category: "총장직속기구", name: "교수학습개발센터 운영위원회", dept: "교육혁신원 교수학습개발센터", function: "● 교수학습프로그램 운영계획 및 성과 심의/자문", exOfficio: "교육혁신원장(위원장), 교수학습개발센터장(서기) 등", appointed: "김미경, 임명성" },
+            { id: 24, category: "총장직속기구", name: "교육혁신원 운영위원회", dept: "교육혁신원", function: "● 교육혁신원의 주요업무 운영 및 세부 논의", exOfficio: "총장(위원장), 교육혁신원장(서기), 처장단 등", appointed: "-" },
+            { id: 30, category: "총장직속기구", name: "산학협력단 운영위원회", dept: "산학협력단", function: "● 산학협력 체결 및 이행, 예결산, 창업 지원 등", exOfficio: "산학협력단장(위원장), 처장단 등", appointed: "-" },
+            { id: 32, category: "총장직속기구", name: "생명윤리위원회", dept: "연구처", function: "● 생명윤리 및 안전에 관련된 사항 심의/조사", exOfficio: "위원장, IRB 행정간사, IRB 전문간사(2), 교수(6), 외부(1)", appointed: "이승원, 이건호, 이은혜 등 11명" },
+            { id: 33, category: "총장직속기구", name: "성희롱·성폭력 고충심의위원회", dept: "SU인권센터 양성평등팀", function: "● 성희롱·성폭력 예방 대책 수립 및 사건 조사/중재", exOfficio: "SU인권센터장(위원장), 처장단 등", appointed: "김나미, 송미정, 박지민, 박재영, 손수진" },
+            { id: 37, category: "총장직속기구", name: "정보전산 운영위원회", dept: "학술정보원 정보전산팀", function: "● 전산시스템 개발/운영 및 정보보안 정책", exOfficio: "학술정보원장(위원장), 학술정보부원장(서기), 처장단 등", appointed: "-" },
+            { id: 45, category: "총장직속기구", name: "학술정보 운영위원회", dept: "학술정보원 학술정보팀", function: "● 도서관 운영 기본계획 및 도서 예산 집행 심의", exOfficio: "총장(위원장), 학술정보원장(서기), 부총장, 처장단 등", appointed: "이은혜, 류한철, 송미정" },
+
+            // 47~56: 교목처 자문기구
+            { id: 47, category: "교목처 자문기구", name: "BFFL추진위원회 (실무)", dept: "교목처", function: "● BFFL 교육철학 실무 추진 및 운영", exOfficio: "BFFL센터장(위원장), 교목팀장(서기) 등", appointed: "김정미, 김나미, 김유선, 정이정, 임태종" },
+            { id: 49, category: "교목처 자문기구", name: "교목위원회", dept: "교목처", function: "● 교내선교 정책 연구 및 학과 신앙활동 지원", exOfficio: "교목처장(위원장), 교목부처장(서기) 등", appointed: "-" },
+            { id: 53, category: "교목처 자문기구", name: "채플위원회", dept: "교목처", function: "● 채플운영 기획, 출석 규정 및 교육 프로그램 운영", exOfficio: "교목처장(위원장), 교목부처장(서기), 신학과장 등", appointed: "정이정, 조대명, 정채영, 강민승" },
+
+            // 57~73: 기획정책자문기구
+            { id: 57, category: "기획정책자문기구", name: "AI 대학혁신센터 운영위원회", dept: "기획처 AI대학혁신센터", function: "● AI 기반 교육혁신 전략 수립 및 윤리 문제 협의", exOfficio: "기획처장(위원장), AI대학혁신센터장(서기) 등", appointed: "류한철, 정진수" },
+            { id: 58, category: "기획정책자문기구", name: "IR센터 운영위원회", dept: "기획처 IR센터", function: "● 센터 운영 기본계획 및 데이터 기반 성과관리 심의", exOfficio: "기획처장(위원장), IR센터팀장(서기) 등", appointed: "조충희, 김성완, 김두희" },
+            { id: 60, category: "기획정책자문기구", name: "규정심의위원회", dept: "기획처", function: "● 대학 규정의 제·개정 및 검토/심의", exOfficio: "기획처장(위원장), 기획팀장(서기) 등", appointed: "김정미, 음영철, 봉원영, 신경옥, 이용우" },
+            { id: 63, category: "기획정책자문기구", name: "등록금심의위원회", dept: "기획처", function: "● 등록금 책정 및 대학 예산/결산 심의", exOfficio: "교수, 직원, 학생, 동문, 전문가, 법인대표 등", appointed: "윤재영, 오혜전, 정지윤 등 9명" },
+            { id: 66, category: "기획정책자문기구", name: "발전전략위원회", dept: "기획처", function: "● 대학 발전전략 및 중장기 발전계획 수립/추진", exOfficio: "부총장(위원장), 기획처장(서기) 등", appointed: "임태종, 최성숙, 정지현 등 8명" },
+            { id: 69, category: "기획정책자문기구", name: "예산위원회", dept: "기획처", function: "● 예산편성 및 추가경정예산 편성 심의/조정", exOfficio: "기획처장(위원장), 예산팀장(서기), 처장단 등", appointed: "신지연, 김길숙" },
+            { id: 71, category: "기획정책자문기구", name: "학과구조개선위원회", dept: "기획처", function: "● 학과 신설/폐지 및 정원 조정 심의", exOfficio: "부총장(위원장), 기획처장(서기), 처장단 등", appointed: "이재구, 한경식, 임태종" },
+
+            // 74~83: 교무행정자문기구
+            { id: 74, category: "교무행정자문기구", name: "공통기기실조정위원회", dept: "공통기기실", function: "● 공통실험기기 분류/배치 및 운영 지침", exOfficio: "공통기기실장(위원장), 교무부처장(서기) 등", appointed: "김희진(학장)" },
+            { id: 77, category: "교무행정자문기구", name: "교원인사위원회", dept: "교무처", function: "● 교원의 임용·승진·재임용·징계 등 인사 심의", exOfficio: "교무처장(위원장), 교무부처장(서기), 처장단 등", appointed: "-" },
+            { id: 78, category: "교무행정자문기구", name: "교육과정운영위원회", dept: "교무처", function: "● 교양/전공 교육과정 운영 및 개편 연구/기획", exOfficio: "교무처장(위원장), 교무부처장(서기) 등", appointed: "학생대표, 봉원영, 강경아 등 7명" },
+            { id: 83, category: "교무행정자문기구", name: "학위검증위원회", dept: "교무처", function: "● 학위 논문 등의 부정행위 조사 및 검증", exOfficio: "교무처장(위원장), 교무부처장(서기), 기획처장 등", appointed: "강태진, 김성완, 김정미, 신성례" },
+
+            // 84~88: 입시행정자문기구
+            { id: 84, category: "입시행정자문기구", name: "대학입학전형 공정관리위원회", dept: "입학처", function: "● 대학입시관리에 대한 공정성 확보 및 자체 감사", exOfficio: "평교수위원(15명 이내), 외부위원(1명)", appointed: "봉원영 외 11명" },
+
+            // 89~99: 학생지원자문기구
+            { id: 89, category: "학생지원자문기구", name: "감염병관리위원회", dept: "건강증진센터", function: "● 감염병 대비 및 대응 계획 수립/관리", exOfficio: "부총장(위원장), 건강증진센터장(서기) 등", appointed: "-" },
+            { id: 94, category: "학생지원자문기구", name: "장학위원회", dept: "학생복지팀", function: "● 장학금 지급 규정 및 수혜 자격 심의", exOfficio: "학생처장(위원장), 학생복지팀장(서기) 등", appointed: "-" },
+
+            // 100~117: 사무행정자문기구
+            { id: 100, category: "사무행정자문기구", name: "개인정보보호 실무위원회", dept: "총무인사팀", function: "● 개인정보보호 세부실태 점검 및 관리", exOfficio: "사무처장(위원장), 총무인사팀장(서기) 등", appointed: "-" },
+            { id: 106, category: "사무행정자문기구", name: "기금운용심의회", dept: "재무처", function: "● 대학 기금 운용 계획 및 규정 제/개정 심의", exOfficio: "총장(위원장), 재무처장(서기), 처장단 등", appointed: "정성진, 박철주, 학생대표 등 8명" },
+            { id: 116, category: "사무행정자문기구", name: "직원인사위원회", dept: "총무인사팀", function: "● 직원 채용, 승진, 보직, 징계 등 인사 심의", exOfficio: "사무처장(위원장), 사무부처장(서기) 등", appointed: "김영상, 최성혜" },
+
+            // 118~123: 연구산학행정자문기구
+            { id: 118, category: "연구산학행정자문기구", name: "교수연구위원회", dept: "연구처", function: "● 학술연구비 지원과제 선정 및 연구소 평가", exOfficio: "연구처장(위원장), 연구팀장(서기) 등", appointed: "임종은, 임명성" },
+
+            // 124~134: 대외협력자문기구
+            { id: 128, category: "대외협력자문기구", name: "발전기금위원회", dept: "브랜드전략본부", function: "● 기금 조성 계획, 집행 및 기부자 예우 심의", exOfficio: "브랜드전략본부장(위원장), 대외협력팀장(서기) 등", appointed: "김동순(직원)" },
+
+            // 135~145: 부속기관 및 기타 자문기구
+            { id: 136, category: "부속기관 및 기타 자문기구", name: "교양교육운영위원회", dept: "교양교육원", function: "● 교양 과목 신설/폐지 및 교과과정 지원 심의", exOfficio: "교양교육원장(위원장), 교무부처장(서기) 등", appointed: "김향일, 김나미, 김두희, 이성희" },
+            { id: 141, category: "부속기관 및 기타 자문기구", name: "생활교육원운영위원회", dept: "생활교육원", function: "● 생활교육원 및 RC교육 운영 기획/지원", exOfficio: "생활교육원장(위원장), 생활교육원팀장(서기) 등", appointed: "우성훈" },
+
+            // 146~151: 대학원자문기구
+            { id: 148, category: "대학원자문기구", name: "대학원위원회", dept: "대학원", function: "● 대학원 학칙 개정, 학과 설치/폐지 등 주요사항 심의", exOfficio: "대학원장(의장), 부원장(서기), 처장단 등", appointed: "간호학과장, 경영학과장" },
+            { id: 151, category: "대학원자문기구", name: "입시공정관리위원회", dept: "대학원", function: "● 대학원 입시관리 공정성 확보 및 감사", exOfficio: "평교수 위원장(1), 평교수 위원(4)", appointed: "정이정, 권혜주, 이은혜, 김기범, 조충희" }
+        ];
+
+        let currentCategory = "전체";
+
+        function init() {
+            renderSidebar();
+            runFilters();
+        }
+
+        // HTML 파일 다운로드 기능 구현
+        function downloadHTML() {
+            const htmlContent = "<!DOCTYPE html>\n" + document.documentElement.outerHTML;
+            const blob = new Blob([htmlContent], { type: 'text/html' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'syu_committee_system_2026.html';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        function renderSidebar() {
+            const sidebar = document.getElementById('categoryList');
+            const categories = ["정책기구", "총장행정자문기구", "총장직속기구", "교목처 자문기구", "기획정책자문기구", "교무행정자문기구", "입시행정자문기구", "학생지원자문기구", "사무행정자문기구", "연구산학행정자문기구", "대외협력자문기구", "부속기관 및 기타 자문기구", "대학원자문기구"];
+            
+            document.getElementById('count-all').textContent = committeeData.length;
+
+            categories.forEach(cat => {
+                const count = committeeData.filter(c => c.category === cat).length;
+                const btn = document.createElement('button');
+                btn.id = `cat-${cat.replace(/\s/g, '')}`;
+                btn.className = "w-full flex items-center justify-between px-4 py-2.5 rounded-xl text-sm font-medium transition-all text-slate-500 hover:bg-slate-100 hover:text-slate-800";
+                btn.onclick = () => filterByCategory(cat);
+                btn.innerHTML = `<span>${cat}</span><span class="text-[9px] bg-slate-100 text-slate-400 font-bold px-1.5 py-0.5 rounded-md">${count}</span>`;
+                sidebar.appendChild(btn);
+            });
+        }
+
+        function filterByCategory(cat) {
+            currentCategory = cat;
+            document.querySelectorAll('#categoryList button').forEach(b => b.classList.remove('sidebar-item-active'));
+            const safeId = cat === "전체" ? 'cat-all' : `cat-${cat.replace(/\s/g, '')}`;
+            const targetBtn = document.getElementById(safeId);
+            if (targetBtn) targetBtn.classList.add('sidebar-item-active');
+            runFilters();
+        }
+
+        function runFilters() {
+            const nameSearch = document.getElementById('nameInput').value.toLowerCase();
+            const deptSearch = document.getElementById('deptInput').value.toLowerCase();
+            
+            const filtered = committeeData.filter(item => {
+                const catMatch = currentCategory === "전체" || item.category === currentCategory;
+                const nameMatch = item.name.toLowerCase().includes(nameSearch);
+                const deptMatch = item.dept.toLowerCase().includes(deptSearch);
+                return catMatch && nameMatch && deptMatch;
+            });
+            
+            renderTable(filtered);
+        }
+
+        function renderTable(data) {
+            const tbody = document.getElementById('dataTableBody');
+            tbody.innerHTML = '';
+            
+            if (data.length === 0) {
+                document.getElementById('emptyState').classList.remove('hidden');
+                return;
+            }
+            document.getElementById('emptyState').classList.add('hidden');
+
+            data.forEach(item => {
+                const tr = document.createElement('tr');
+                tr.className = "table-row group transition-all";
+                tr.innerHTML = `
+                    <td class="px-6 py-5 text-center text-[10px] font-bold text-slate-300">#${item.id}</td>
+                    <td class="px-6 py-5">
+                        <div class="font-bold text-slate-800 text-sm">${item.name}</div>
+                        <div class="text-[10px] text-slate-400 mt-0.5 font-medium">${item.category}</div>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(${item.id}, 'function')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-emerald-50 text-emerald-700 text-[11px] font-bold rounded-xl border border-emerald-100 hover:bg-emerald-600 hover:text-white">
+                            <i class="fas fa-tasks"></i> 기능 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-center">
+                        <button onclick="openSpecificModal(${item.id}, 'members')" class="btn-view inline-flex items-center gap-2 px-4 py-2 bg-blue-50 text-blue-700 text-[11px] font-bold rounded-xl border border-blue-100 hover:bg-blue-600 hover:text-white">
+                            <i class="fas fa-users"></i> 명단 보기
+                        </button>
+                    </td>
+                    <td class="px-6 py-5 text-right">
+                        <span class="inline-block px-3 py-1 bg-slate-100 text-slate-600 text-[10px] font-bold rounded-lg border border-slate-200">
+                            ${item.dept}
+                        </span>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function openSpecificModal(id, mode) {
+            const item = committeeData.find(d => d.id === id);
+            if (!item) return;
+
+            const modal = document.getElementById('detailModal');
+            const header = document.getElementById('modalHeader');
+            const badge = document.getElementById('modalBadge');
+            const title = document.getElementById('modalTitle');
+            const sub = document.getElementById('modalSub');
+            
+            const funcArea = document.getElementById('functionContent');
+            const memberArea = document.getElementById('membersContent');
+
+            title.textContent = item.name;
+            sub.textContent = `${item.category} | ${item.dept}`;
+
+            if (mode === 'function') {
+                header.style.backgroundColor = '#004a26';
+                badge.textContent = "주요 기능 조회";
+                funcArea.classList.remove('hidden');
+                memberArea.classList.add('hidden');
+                document.getElementById('funcText').textContent = item.function;
+            } else {
+                header.style.backgroundColor = '#1e40af';
+                badge.textContent = "위원 명단 조회";
+                funcArea.classList.add('hidden');
+                memberArea.classList.remove('hidden');
+                document.getElementById('exText').textContent = item.exOfficio;
+                document.getElementById('appText').textContent = item.appointed;
+            }
+
+            modal.classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('detailModal').classList.add('hidden');
+        }
+
+        window.onload = init;
+    </script>
+
+</body></html>
